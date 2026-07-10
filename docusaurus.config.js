@@ -40,18 +40,6 @@ const config = {
     ],
   ],
 
-  themes: [
-    [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
-      {
-        hashed: true,
-        language: ["es", "en"],
-        highlightSearchTermsOnTargetPage: true,
-        searchResultLimits: 10,
-      },
-    ],
-  ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
