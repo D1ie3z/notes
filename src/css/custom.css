@@ -1,0 +1,241 @@
+/* D1ie3z // N0t4s - Custom CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+  --ifm-color-primary: #00ff00;
+  --ifm-color-primary-dark: #00e600;
+  --ifm-color-primary-darker: #00d900;
+  --ifm-color-primary-darkest: #00b300;
+  --ifm-color-primary-light: #1aff1a;
+  --ifm-color-primary-lighter: #33ff33;
+  --ifm-color-primary-lightest: #66ff66;
+
+  --ifm-background-color: #0000FF;
+  --ifm-background-surface-color: #0000FF;
+  --ifm-navbar-background-color: #000000;
+  --ifm-footer-background-color: #000000;
+
+  --ifm-font-family-base: 'JetBrains Mono', monospace;
+  --ifm-font-family-monospace: 'JetBrains Mono', monospace;
+  --ifm-font-color-base: #cccccc;
+  --ifm-heading-color: #ffffff;
+
+  --ifm-code-font-size: 90%;
+  --ifm-code-background: #1a1a1a;
+  --ifm-pre-background: #111111;
+
+  --ifm-navbar-height: 50px;
+  --ifm-toc-border-color: #222222;
+  --ifm-hr-border-color: #222222;
+}
+
+/* Navbar */
+.navbar {
+  border-bottom: 2px solid #00ff00;
+  padding: 0 1rem;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.navbar__title {
+  color: #00ff00 !important;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.navbar__link {
+  color: #00ff00 !important;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.65rem;
+}
+
+.navbar__link:hover {
+  color: #66ff66 !important;
+}
+
+/* Sidebar */
+.menu {
+  background-color: #000080 !important;
+  border-right: 2px solid #00ff00;
+}
+
+.menu__link {
+  color: #cccccc;
+  font-size: 0.8rem;
+  border-radius: 0;
+}
+
+.menu__link:hover {
+  color: #00ff00;
+  background-color: #0000aa !important;
+}
+
+.menu__link--active {
+  color: #00ff00 !important;
+  background-color: #0000aa !important;
+  border-left: 3px solid #00ff00;
+}
+
+.menu__list-item-collapsible:hover {
+  background-color: #0000aa !important;
+}
+
+/* Category labels */
+.menu__list-item > .menu__link--sublist,
+.menu__link--sublist {
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Main content wrapper */
+.main-wrapper {
+  background-color: #0000FF;
+}
+
+/* Doc content area */
+.docItemContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module,
+article,
+.theme-doc-markdown {
+  background-color: #0a0a0a;
+}
+
+/* The actual content column */
+.col.col--7,
+[class*="docItemCol"] {
+  background-color: #0a0a0a;
+  padding: 1.5rem;
+}
+
+/* Content area */
+.container {
+  background-color: #0a0a0a;
+}
+
+/* Make the main content area dark */
+main .container {
+  background-color: #0a0a0a;
+  padding: 1rem;
+}
+
+.row {
+  background-color: #0a0a0a;
+}
+
+/* Doc page layout */
+.docPage__5DB,
+[class*="docPage"] {
+  background-color: #0000FF;
+}
+
+/* Headings with Press Start 2P */
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+  font-family: 'Press Start 2P', monospace;
+}
+
+.markdown h1 {
+  color: #ffffff;
+  border-bottom: 2px solid #00ff00;
+  padding-bottom: 0.5rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.markdown h2 {
+  color: #00ff00;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.markdown h3 {
+  color: #cccccc;
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+
+.markdown a {
+  color: #00ff00;
+}
+
+.markdown a:hover {
+  color: #66ff66;
+}
+
+/* Blockquote */
+.markdown blockquote {
+  border-left: 3px solid #00ff00;
+  background-color: #111111;
+  color: #aaaaaa;
+}
+
+/* Code blocks */
+.prism-code {
+  border: 1px solid #222222;
+  border-radius: 0 !important;
+}
+
+code {
+  border-radius: 0 !important;
+  color: #00ff00;
+  background-color: #1a1a1a;
+  border: 1px solid #222222;
+}
+
+/* Footer */
+.footer {
+  border-top: 2px solid #00ff00;
+  color: #444444;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.6rem;
+}
+
+.footer__copyright {
+  color: #00ff00;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000080;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff00;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #66ff66;
+}
+
+/* TOC */
+.table-of-contents__link {
+  color: #666666;
+  font-size: 0.8rem;
+}
+
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+  color: #00ff00;
+}
+
+/* TOC sidebar */
+.thin-scrollbar {
+  background-color: #0a0a0a;
+}
+
+/* Search */
+.navbar__search-input {
+  background-color: #1a1a1a;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  font-family: 'JetBrains Mono', monospace;
+}
