@@ -11,3 +11,4 @@ Me averguenza un poco no tener nada de valor acá, pero me iré actualizando. Es
 
 - https://cloud.hacktricks.wiki/en/index.html
 - https://github.com/Gerenios/AADInternals
+- https://hackingthe.cloud/
