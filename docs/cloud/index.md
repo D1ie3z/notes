@@ -4,4 +4,10 @@ sidebar_label: Cloud
 
 # Cloud
 
-*Próximamente...*
+Me averguenza un poco no tener nada de valor acá, pero me iré actualizando. Es que mira para que te traigo el refrito de cursos o recursos en linea jajaja, mejor te traigo cosas que si he visto o usado, y ni siquiera traerte son mis notas wey JAJAJAJAJA, pero pues no me voy a copiar todo hacktricks o así. 
+
+
+¿Te servirá de algo esto?
+
+- https://cloud.hacktricks.wiki/en/index.html
+- https://github.com/Gerenios/AADInternals

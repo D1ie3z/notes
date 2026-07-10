@@ -1,8 +1,57 @@
 ---
-title: AI Tools para Hacking
+title: Recursos
 sidebar_position: 1
 ---
 
-## Próximamente
+## Ahí te va
 
-Esta nota está en construcción.
+- https://www.youtube.com/@IBMTechnology
+- https://gandalf.lakera.ai/
+- https://www.ibm.com/think/topics/prompt-injection
+- https://llmsecurity.net/
+- https://github.com/grepstrength/WideOpenAI
+- https://systemweakness.com/bypassing-azure-openais-prompt-shield-65ca03be8abb
+- https://genai.owasp.org/
+- https://aivillage.org/large%20language%20models/threat-modeling-llm/
+- https://www.promptingguide.ai/risks/adversarial
+- https://www.promptingguide.ai/research/rag
+- https://www.cobalt.io/blog/prompt-injection-attacks
+- https://llm-attacks.org/
+- https://atlas.mitre.org/matrices/ATLAS
+- https://www.bugcrowd.com/blog/ai-vulnerability-deep-dive-prompt-injection/
+- https://www.unite.ai/prompt-hacking-and-misuse-of-llm/?trk=article-ssr-frontend-pulse_little-text-block
+- https://simonwillison.net/2023/May/2/prompt-injection-explained/
+- https://vickieli.medium.com/hacking-llms-with-prompt-injections-6a5ebffb182b
+- https://research.nccgroup.com/2022/12/05/exploring-prompt-injection-attacks/
+- https://github.com/WithSecureLabs/damn-vulnerable-llm-agent
+- https://github.com/ScottLogic/prompt-injection
+- https://github.com/greshake/llm-security
+- https://github.com/Hannibal046/Awesome-LLM
+- https://github.com/ottosulin/awesome-ai-security
+- https://github.com/mik0w/pallms
+- https://github.com/OWASP/www-project-top-10-for-large-language-model-applications/wiki/Vulnerable-LLM-Applications
+- https://github.com/corca-ai/awesome-llm-security
+- https://promptairlines.com/
+- https://crucible.dreadnode.io/
+- https://prompting.ai.immersivelabs.com/
+- https://www.bugcrowd.com/wp-content/uploads/2024/04/Ultimate-Guide-AI-Security.pdf
+- https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/red-teaming
+- https://www.hackerone.com/resources/e-book/the-ultimate-guide-to-managing-ethical-and-security-risks-in-ai
+- https://developer.nvidia.com/blog/nvidia-ai-red-team-an-introduction/
+- https://lakera-marketing-public.s3.eu-west-1.amazonaws.com/Lakera%2BAI%2B-%2BReal%2BWorld%2BLLM%2BExploits%2B(Jan%2B2024)-min.pdf
+- https://wiki.offsecml.com/Welcome+to+the+Offensive+ML+Playbook
+- https://go.snyk.io/rs/677-THP-415/images/owasp-top-10-llm.pdf
+- https://play.secdim.com/game/ai
+- https://systemweakness.com/large-language-model-llm-pen-testing-part-i-2ef96acb6763
+- https://www.blazeinfosec.com/post/llm-pentest-agent-hacking/
+- https://github.com/cckuailong/awesome-gpt-security
+- https://github.com/NetsecExplained/chatgpt-your-red-team-ally
+- https://www.pwndefend.com/2023/03/05/active-directory-enumeration-with-chatgpt/
+- https://anugrahsr.in/chatgpt-for-hacking/
+- https://medium.com/@qaafqasim/chat-gpt-for-bug-bounty-recon-generate-wordlist-nuclei-template-convert-p3-or-p4-in-p2-or-p1-8d35524b1d76
+- https://blog.gopenai.com/
+- https://blog.mithrilsecurity.io/poisongpt-how-we-hid-a-lobotomized-llm-on-hugging-face-to-spread-fake-news/
+- https://blog.google/technology/safety-security/googles-ai-red-team-the-ethical-hackers-making-ai-safer/
+- https://services.google.com/fh/files/blogs/google_ai_red_team_digital_final.pdf
+- https://github.com/elder-plinius
+- https://embracethered.com/blog/ascii-smuggler.html

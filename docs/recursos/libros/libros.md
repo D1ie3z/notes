@@ -1,8 +1,11 @@
 ---
-title: Libros y writeups
+title: Writeups / Cosas que vaya viendo
 sidebar_position: 1
 ---
 
-## Próximamente
+## No sé como ponerlo
+Voy a poner lo que vaya viendo y se me hace interesante de que un medium o cosillas así, libros, la neta un desorden jajajaaj pero pa tenerlos a la mano
 
-Esta nota está en construcción.
+### Recursos
+
+- https://dencode.com/

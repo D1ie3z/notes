@@ -7,7 +7,7 @@ const config = {
   tagline: 'Espero te sirvan, son una porquería pero son algo :)',
   favicon: 'img/favicon.ico',
 
-  url: 'https://chuletarica.d1ie3z.com',
+  url: 'https://soy10.site',
   baseUrl: '/',
 
   organizationName: 'D1ie3z',

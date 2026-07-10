@@ -5,4 +5,4 @@ sidebar_position: 1
 
 ## Próximamente
 
-Esta nota está en construcción.
+Estas notas están realmente en construcción.

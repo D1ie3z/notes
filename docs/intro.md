@@ -11,7 +11,11 @@ sidebar_position: 0
 
 Estas son mis notas. Y ya no hay más, solo que veo en internet y en mi vida diaria, gracias a todos los que me han contribuido algo los tqm.
 
+Si se ve una porquería sin actualizar... Estoy trabajando en ello   
+
 ## Para quién son
+
+Para mí we.
 
 Para la persona que está empezando y no sabe por dónde. Para el que lleva tiempo pero le falta alguna pieza. Para el que quiere aprender, no para el que quiere aparentar. Para mí.
 

@@ -4,4 +4,4 @@ sidebar_label: Mindset
 
 # Mindset
 
-*Próximamente...*
+Tú decides si te sirve esta parte o... ¿No?
