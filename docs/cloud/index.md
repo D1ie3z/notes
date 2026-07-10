@@ -12,3 +12,5 @@ Para que te traigo el refrito de cursos o recursos en linea jajaja, mejor te tra
 - https://cloud.hacktricks.wiki/en/index.html
 - https://github.com/Gerenios/AADInternals
 - https://hackingthe.cloud/
+- https://www.youtube.com/@pwned-labs
+- https://pwnedlabs.io/
