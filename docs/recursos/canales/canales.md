@@ -29,3 +29,7 @@ sidebar_position: 1
 - https://discord.gg/eyeTESVqeA
 - https://bugbountydaily.com/
 - https://bugbounty.forum/
+
+
+## Reddit
+- https://www.reddit.com/r/websecurityresearch/
