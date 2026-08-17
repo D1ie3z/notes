@@ -15,4 +15,4 @@ En el candadito del sitio web o antes de poner avanzar ve los certificados del s
 
 ## Prueba esto
 
-https://crt.name/v1/search?apex=mibait.com
+https://crt.name/v1/search?apex=dominio.com
