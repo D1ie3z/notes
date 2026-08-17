@@ -11,3 +11,8 @@ sidebar_position: 1
 ## Navegador
 
 En el candadito del sitio web o antes de poner avanzar ve los certificados del sitio y si viene un *.sitio.com puede que cualquiera lo que este debajo de sitio.com entre
+
+
+## Prueba esto
+
+https://crt.name/v1/search?apex=mibait.com
