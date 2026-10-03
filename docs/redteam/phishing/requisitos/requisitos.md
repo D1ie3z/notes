@@ -1,4 +1,3 @@
-
 ---
 title: Requisitos
 sidebar_position: 1
