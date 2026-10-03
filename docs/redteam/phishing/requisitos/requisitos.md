@@ -3,7 +3,7 @@ title: Requisitos
 sidebar_position: 1
 ---
 
-## Requisitos
+## Requisitos básicos
 
 Esto es lo que necesitas para poder hacer tu phishing... Así es ocupas $$$ por eso no soy taan fan, JAJAJAJAJ.
 
@@ -37,4 +37,42 @@ Puedes comprarlo en:
 - Domain.com
 - Namecheap
 
+### Certificado TLS
+
+Ya hable que debes meterle más cariño y presupuesto porque es más facil de detectar el phishing hoy en día entonces...
+Nmms si mandas un http://sitio.com pues te va a mandar al virote.
+Para eso necesitas un certificado SSL para dar el gatazo y hacerlo más creativo.
+
+Adquierelo en:
+
+- https://letsencrypt.org/
+- https://zerossl.com/
+
+### Archivos del phishing
+
+Literalmente la estructura (HTML, CSS, JS, backend, etc...) pues lo básico, el sitio debe tener estructura y hacer algo.
+
+Puedes clonar un sitio con:
+- Zphisher - https://github.com/htr-tech/zphisher
+- SaveWeb2zip - https://saveweb2zip.com/en
+
+O hacerlo tú papi a mano o token maxxing jaja... 
+
+### Payload
+
+Pues si el phishing que quieres hacer es para que un user descargue un archivo truculento (malicioso) hay que preparalo. 
+O sea activar la descarga y aumentar la probabilidad de que el usuario lo descargue.
+
+### Seguridad Web
+
+Hay que proteger nuestro sitio de ser atacado... jajaja, nah o sea si, pero el punto principal es protegerlo de los escaneres que lo traten de analizar entonces hay que meterle:
+
+- Firewall
+- WAF
+- Anti-Bot Solutions (Captcha)
+- Lockdown Ports
+- Estandares de codigo seguro (no te vayas a dejar un SQLi ahí wey)
+- Bloqueo, redirecciones, mostrar contenido benigno a ciertos paises, ASNs, y otras IPs que escanea el internet.
+- Configuración segura (dejate un directory traversal JK, NO SEAS WEY)
+- Redirectores
 
