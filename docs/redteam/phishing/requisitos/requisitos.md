@@ -1,5 +1,5 @@
 ---
-title: Requisitos
+title: Requisitos Basicos
 sidebar_position: 1
 ---
 
