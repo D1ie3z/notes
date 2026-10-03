@@ -1,9 +1,8 @@
 ---
-title: Phishing
-sidebar_position: 1
+sidebar_label: Phishing
 ---
 
-## Phishing
+# Phishing
 
 La fucking capa 8, de un master escuche que el phishing es para la raza con skill issue LOL. Pues sea así o no...
 
