@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.1">
 <title data-rh="true">Explicacion | D1ie3z // N0t4s</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://soy10.site/redteam/phishing/requisitos/explicacion"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Explicacion | D1ie3z // N0t4s"><meta data-rh="true" name="description" content="Explicación"><meta data-rh="true" property="og:description" content="Explicación"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://soy10.site/redteam/phishing/requisitos/explicacion"><link data-rh="true" rel="alternate" href="https://soy10.site/redteam/phishing/requisitos/explicacion" hreflang="es"><link data-rh="true" rel="alternate" href="https://soy10.site/redteam/phishing/requisitos/explicacion" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Red Team","item":"https://soy10.site/redteam/"},{"@type":"ListItem","position":2,"name":"Phishing","item":"https://soy10.site/redteam/phishing/"},{"@type":"ListItem","position":3,"name":"Requisitos Basicos","item":"https://soy10.site/redteam/phishing/requisitos/"},{"@type":"ListItem","position":4,"name":"Explicacion","item":"https://soy10.site/redteam/phishing/requisitos/explicacion/"}]}</script><link rel="stylesheet" href="/assets/css/styles.c791538f.css">
-<script src="/assets/js/runtime~main.67ab41f8.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.11dad931.js" defer="defer"></script>
 <script src="/assets/js/main.03560f2d.js" defer="defer"></script>
 </head>
 <body>
@@ -97,6 +97,46 @@ Investigadores y analistas SOC que ven passwordreset.xyz en un log:<!-- -->
 </ul>
 <p>O sea: con infraestructura bien armada (ASN limpio, SSL válido, dominio neutro), el phishing se apoya en la superficie visual para convencer, y deja el dominio como un &quot;sobreviviente&quot; de los filtros.</p>
 <p>Además los dominios con palabras sospechosas cómo las que ves los cacha DNS hunting.</p>
-<p>Resumen: un buen dominio de phishing no intenta convencer, intenta no delatarse. La persuasión la hace la página; el dominio solo tiene que sobrevivir los filtros.</p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/redteam/phishing/requisitos"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Requisitos Basicos</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/bugbounty"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Bug Bounty</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#explicación" class="table-of-contents__link toc-highlight">Explicación</a></li><li><a href="#infraestructura" class="table-of-contents__link toc-highlight">Infraestructura</a><ul><li><a href="#localización-geografíca" class="table-of-contents__link toc-highlight">Localización geografíca</a></li><li><a href="#asn" class="table-of-contents__link toc-highlight">ASN</a></li><li><a href="#sitios-de-confianza" class="table-of-contents__link toc-highlight">Sitios de confianza</a></li><li><a href="#infraestructura-comprometida" class="table-of-contents__link toc-highlight">Infraestructura comprometida</a></li><li><a href="#evita-usar-ips-abusadas" class="table-of-contents__link toc-highlight">Evita usar IPs abusadas</a></li></ul></li><li><a href="#dominios" class="table-of-contents__link toc-highlight">Dominios</a><ul><li><a href="#seleccionar" class="table-of-contents__link toc-highlight">Seleccionar</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">// D1ie3z — just a random one who loves hacking stuff</div></div></div></footer></div>
+<p>Resumen: un buen dominio de phishing no intenta convencer, intenta no delatarse. La persuasión la hace la página; el dominio solo tiene que sobrevivir los filtros.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="proveedores-y-suplantar-su-identidad">Proveedores y suplantar su identidad<a href="#proveedores-y-suplantar-su-identidad" class="hash-link" aria-label="Enlace directo al Proveedores y suplantar su identidad" title="Enlace directo al Proveedores y suplantar su identidad" translate="no">​</a></h3>
+<p>Esto aquí y en todos lados es master class. Los proveedores del cliente que estamos atacando.</p>
+<p>Ejemplo concreto de la lógica</p>
+<ul>
+<li class="">Durante el reconocimiento (OSINT) sobre la empresa objetivo, descubres que trabaja con:<!-- -->
+<ul>
+<li class="">Un proveedor local de embalajes: &quot;Empaques del Norte&quot; (empaquesdelnorte.com)</li>
+<li class="">Un servicio de mensajería: &quot;RápidoExpress&quot; (rapidoexpress.com)</li>
+<li class="">Un software de nómina: &quot;NóminaSoft&quot;</li>
+</ul>
+</li>
+<li class="">En lugar de registrar empresaobjetivo-facturas.com (suplantar a la víctima directamente), registras:<!-- -->
+<ul>
+<li class="">empaquesdelnorte-facturacion.com</li>
+<li class="">rapidoexpress-seguimiento.com</li>
+<li class="">nominasoft-actualizacion.com</li>
+</ul>
+</li>
+<li class="">Envías correos desde esos dominios falsos hacia la empresa objetivo.</li>
+</ul>
+<p>Es decir:</p>
+<table><thead><tr><th>Tipo de suplantación</th><th>Qué defensas tiene la empresa objetivo</th></tr></thead><tbody><tr><td><strong>Directa</strong> (alguien finge ser la propia empresa o Microsoft)</td><td>DMARC/SPF/DKIM configurados, listas negras de dominios de marcas, filtros de &quot;microsoft&quot;, &quot;login&quot;, &quot;password&quot;, capacitación específica: &quot;desconfía de correos que pidan tu contraseña&quot;</td></tr><tr><td><strong>De proveedor</strong> (alguien finge ser el proveedor de cajas)</td><td>Casi nada. Nadie configuró DMARC por <code>empaquesdelnorte.com</code>. Nadie capacitó a los empleados sobre él. El nombre no aparece en ninguna lista negra</td></tr></tbody></table>
+<p>Y por qué está chulo no solo en ¿phishing?</p>
+<ul>
+<li class="">La empresa controla su propia reputación de correo, pero no puede configurar los dominios de sus proveedores (eso es responsabilidad de cada proveedor).</li>
+<li class="">Los proveedores pequeños (una imprenta local, un taller, una mensajería regional) rara vez tienen defensas de correo bien implementadas: SPF mal configurado, DMARC inexistente → cualquiera puede enviar correos &quot;de ellos&quot; desde un dominio similar.</li>
+</ul>
+<p>Aquí está el factor psicológico, quizá el más potente:</p>
+<blockquote>
+<p>El vínculo ya existe. Los empleados de la empresa objetivo:</p>
+</blockquote>
+<ul>
+<li class="">Ya reciben correos legítimos del proveedor (facturas, órdenes de envío, avisos).</li>
+<li class="">Reconocen el nombre y no lo asocian con peligro.</li>
+<li class="">El correo llega dentro de un contexto laboral esperado: &quot;llegó la factura del proveedor de cajas&quot; → normal, rutinario.</li>
+<li class="">Un correo de &quot;empaques del norte&quot; pidiendo &quot;confirmar datos de pago para liberar tu envío&quot; no activa las mismas alarmas mentales que uno de &quot;Microsoft&quot; pidiendo contraseña.</li>
+</ul>
+<blockquote>
+<p>Resumen: en lugar de suplantar a la empresa objetivo (fuertemente defendida), se suplantan a sus proveedores (casi indefendidos), explotando la confianza laboral existente y la asimetría de defensas.</p>
+</blockquote></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/redteam/phishing/requisitos"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Requisitos Basicos</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/bugbounty"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Bug Bounty</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#explicación" class="table-of-contents__link toc-highlight">Explicación</a></li><li><a href="#infraestructura" class="table-of-contents__link toc-highlight">Infraestructura</a><ul><li><a href="#localización-geografíca" class="table-of-contents__link toc-highlight">Localización geografíca</a></li><li><a href="#asn" class="table-of-contents__link toc-highlight">ASN</a></li><li><a href="#sitios-de-confianza" class="table-of-contents__link toc-highlight">Sitios de confianza</a></li><li><a href="#infraestructura-comprometida" class="table-of-contents__link toc-highlight">Infraestructura comprometida</a></li><li><a href="#evita-usar-ips-abusadas" class="table-of-contents__link toc-highlight">Evita usar IPs abusadas</a></li></ul></li><li><a href="#dominios" class="table-of-contents__link toc-highlight">Dominios</a><ul><li><a href="#seleccionar" class="table-of-contents__link toc-highlight">Seleccionar</a></li><li><a href="#proveedores-y-suplantar-su-identidad" class="table-of-contents__link toc-highlight">Proveedores y suplantar su identidad</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">// D1ie3z — just a random one who loves hacking stuff</div></div></div></footer></div>
 </body>
 </html>
