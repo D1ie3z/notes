@@ -125,4 +125,40 @@ Además los dominios con palabras sospechosas cómo las que ves los cacha DNS hu
 
 Resumen: un buen dominio de phishing no intenta convencer, intenta no delatarse. La persuasión la hace la página; el dominio solo tiene que sobrevivir los filtros.
 
+### Proveedores y suplantar su identidad
 
+Esto aquí y en todos lados es master class. Los proveedores del cliente que estamos atacando.
+
+Ejemplo concreto de la lógica
+
+- Durante el reconocimiento (OSINT) sobre la empresa objetivo, descubres que trabaja con:
+  - Un proveedor local de embalajes: "Empaques del Norte" (empaquesdelnorte.com)
+  - Un servicio de mensajería: "RápidoExpress" (rapidoexpress.com)
+  - Un software de nómina: "NóminaSoft"
+- En lugar de registrar empresaobjetivo-facturas.com (suplantar a la víctima directamente), registras:
+  - empaquesdelnorte-facturacion.com
+  - rapidoexpress-seguimiento.com
+  - nominasoft-actualizacion.com
+- Envías correos desde esos dominios falsos hacia la empresa objetivo.
+
+Es decir:
+
+| Tipo de suplantación                                          | Qué defensas tiene la empresa objetivo                                                                                                                                                 |
+| ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Directa** (alguien finge ser la propia empresa o Microsoft) | DMARC/SPF/DKIM configurados, listas negras de dominios de marcas, filtros de "microsoft", "login", "password", capacitación específica: "desconfía de correos que pidan tu contraseña" |
+| **De proveedor** (alguien finge ser el proveedor de cajas)    | Casi nada. Nadie configuró DMARC por `empaquesdelnorte.com`. Nadie capacitó a los empleados sobre él. El nombre no aparece en ninguna lista negra                                      |
+
+Y por qué está chulo no solo en ¿phishing?
+
+- La empresa controla su propia reputación de correo, pero no puede configurar los dominios de sus proveedores (eso es responsabilidad de cada proveedor).
+- Los proveedores pequeños (una imprenta local, un taller, una mensajería regional) rara vez tienen defensas de correo bien implementadas: SPF mal configurado, DMARC inexistente → cualquiera puede enviar correos "de ellos" desde un dominio similar.
+
+Aquí está el factor psicológico, quizá el más potente:
+> El vínculo ya existe. Los empleados de la empresa objetivo:
+
+- Ya reciben correos legítimos del proveedor (facturas, órdenes de envío, avisos).
+- Reconocen el nombre y no lo asocian con peligro.
+- El correo llega dentro de un contexto laboral esperado: "llegó la factura del proveedor de cajas" → normal, rutinario.
+- Un correo de "empaques del norte" pidiendo "confirmar datos de pago para liberar tu envío" no activa las mismas alarmas mentales que uno de "Microsoft" pidiendo contraseña.
+
+> Resumen: en lugar de suplantar a la empresa objetivo (fuertemente defendida), se suplantan a sus proveedores (casi indefendidos), explotando la confianza laboral existente y la asimetría de defensas.
