@@ -259,3 +259,50 @@ Resumen en 3 líneas
 - Los SaaS como Okta hacen normal que el nombre de una empresa aparezca en un subdominio.
 - Eso anula la defensa: los filtros no pueden bloquear por el nombre de la empresa sin dañar servicios legítimos.
 - Nosotros aprovechamos ese hueco poniendo el nombre de la víctima en subdominios de nuestros propios dominios o servicios cloud para que el phishing parezca una puerta de entrada corporativa legítima.
+
+## Certificados SSL
+
+Reputación, esa palabra basicamente es la que abarca el phishing. El tipo de certificado SSL también tiene reputación.
+
+> No todas las CAs pesan igual
+
+### Las CA gratuitas
+
+Let's Encrypt es la más famosa: emite certificados gratis, automáticamente y sin verificar quién eres. Solo demuestras que controlas el dominio (con un proceso automatizado de 2 minutos).
+Esto fue revolucionario para internet (HTTPS para todos), pero tiene un lado oscuro:
+
+- Un atacante puede tener un certificado válido en 5 minutos, sin pagar, sin identificarse, sin ningún humano revisando nada.
+- Por eso, el tráfico HTTPS de certificados gratuitos es estadísticamente mucho más abusado que el de CAs pagas.
+
+## Las CA pagas (comerciales)
+Certificados de DigiCert, Sectigo, GlobalSign, etc. cuestan dinero (desde ~$50 hasta cientos de dólares al año) y a menudo incluyen verificación de la organización (te piden documentos, verifican que la empresa existe). Emitir uno requiere esfuerzo e identidad → el atacante deja rastro y gasta dinero.
+
+Los productos de seguridad (EDR, SIEM, proxies, gateways) pueden configurar una alerta del tipo:
+
+> "Un equipo interno se conectó a un sitio que usa certificado de Let's Encrypt y el dominio tiene menos de 30 días"
+
+**Ojo con la lógica**: esto no significa que todo sitio con Let's Encrypt sea malicioso (millones de sitios legítimos lo usan). Significa que es un factor más que sube la puntuación de riesgo. Combinado con otros indicadores (dominio recién registrado, ASN barato, palabras clave sospechosas...), ayuda a priorizar qué revisar.
+
+¿Entonces qué hago?
+
+|                        | Certificado gratis          | Certificado pago                      |
+| ---------------------- | --------------------------- | ------------------------------------- |
+| Costo                  | \$0                         | ~\$50-500/año                         |
+| ¿Identidad verificada? | No                          | Sí (al menos el dominio/organización) |
+| Señal para los filtros | "Más probabilidad de abuso" | "Parece más serio"                    |
+| Esfuerzo de emisión    | 5 minutos, anónimo          | Requiere pago y datos                 |
+
+Si tu dominio ya es neutro, con ASN limpio y registro pagado, el certificado pago es la última capa de "legitimidad": quita un indicador que los defensores usan para priorizar. El conjunto completo dice "esto parece un negocio real establecido", no "esto parece algo montado ayer". (Pues si es más costoso pero vale la pena invertir para que sea más legitimo
+
+Ole lo caracole: https://www.namecheap.com/security/ssl-certificates/
+
+Sino que sabes que show:
+
+| Tipo                             | Qué verifica                                                                  | Precio aprox. en la imagen | Lectura de un defensor                                                                  |
+| -------------------------------- | ----------------------------------------------------------------------------- | -------------------------- | --------------------------------------------------------------------------------------- |
+| **DV (Domain Validation)**       | Solo que controlas el dominio (automático, sin humanos)                       | C\$15-49                   | "El mínimo posible" — casi igual de anónimo que Let's Encrypt, pero emitido por CA paga |
+| **OV (Organization Validation)** | Que la **organización existe**: piden documentos legales, dirección, teléfono | C\$49-71                   | "Alguien verificó que esta empresa existe" — señal más fuerte                           |
+| **EV (Extended Validation)**     | Verificación profunda de la empresa (registros, operación, reputación)        | C\$105                     | El nivel máximo; antes mostraba el nombre de la empresa en verde en el navegador        |
+
+
+> Resumen: el emisor del certificado SSL es visible y tiene reputación; los filtros de seguridad tratan los certificados gratuitos (Let's Encrypt) como un factor de riesgo adicional, por eso se recomienda certificado pago como una capa más de legitimidad aparente (OV/EV).
