@@ -59,3 +59,70 @@ Puedes usar: https://lots-project.com/ para apoyarte
 ### Evita usar IPs abusadas
 Ve la reputación de la IP antes de hacer tu phishing, si está flageada GG estará en una blacklist.
 
+## Dominios
+
+### Seleccionar
+
+El dominio es lo primero que una víctima potencial ve en un enlace:
+
+```
+https://o365login.com/verify
+       └──────┬──────┘
+      Aquí está el pedo
+```
+El texto identifica dos fuerzas opuestas:
+
+| Fuerza                                 | Qué pide                                                     | Ejemplo                                |
+| -------------------------------------- | ------------------------------------------------------------ | -------------------------------------- |
+| **Decepción (engañar a la víctima)**   | Que el dominio parezca legítimo, relacionado con el servicio | `o365login.com`                        |
+| **Subtleza (evadir a los defensores)** | Que no despierte sospechas ni activables alertas             | `secure-mail-portal.com` o algo neutro |
+
+Un dominio como `o365login.com` gana en el primer frente pero pierde en el segundo. 
+Un dominio como `xn--pple-43d.com` (punycode, otro tema) gana en el segundo pero puede confundir a la víctima.
+
+¿Por qué o365login.com funciona (y por qué falla)?
+
+Por qué engaña a las víctimas:
+
+- Contiene palabras clave reales: "o365" (Office 365) + "login".
+- El TLD .com es el más reconocido y "normal" del mundo. Un .xyz o .top genera más sospecha en usuarios cuidadosos (aunque esto va cambiando).
+- Una víctima apurada que lee el enlace rápidamente ve "o365" y "login" y su cerebro completa: "página de Microsoft".
+
+Por qué es detectado fácilmente:
+- Detección por palabra clave (sin siquiera visitar el sitio)
+Los filtros de email, proxies y plataformas de seguridad revisan el texto del enlace que llega en el correo. Si el dominio contiene:
+
+    - o365, office365, microsoft
+    - password, reset, login, verify, secure, account
+
+El filtro lo marca antes de que nadie haga clic. Esto es crítico: la detección ocurre en el enlace, no en el sitio. Un dominio recién registrado con "microsoft" en el nombre es sospechoso por definición, porque Microsoft no necesita registrar dominios nuevos llamados microsoft-soporte.com.
+- Los sujetos con experiencia lo van a cachar...
+Investigadores y analistas SOC que ven passwordreset.xyz en un log:
+    - Dominio recién registrado (se puede verificar con whois en segundos).
+    - Contiene "passwordreset" → intención evidente.
+    - TLD .xyz barato y frecuentemente abusado.
+    - Conclusión en 10 segundos: phishing. Reportar, bloquear, listo.
+
+> Entonces ¿Qué hago?
+
+- Dominio neutral o ambiguo
+
+| Tipo de dominio                | Efecto en la víctima                          | Efecto en los defensores            |
+| ------------------------------ | --------------------------------------------- | ----------------------------------- |
+| `microsoftaccountaccess.com`   | Muy convincente                               | Banderas rojas por todas partes     |
+| `mail-session-portal.com`      | Razonablemente convincente                    | Ambiguo: podría ser legítimo        |
+| `bluesky-events.com` (neutral) | No dice nada por sí solo, pero tampoco asusta | Nada que detectar por palabra clave |
+
+> ¿Pero cómo engaña un dominio neutral a la víctima? Aquí está el truco que complementa lo anterior:
+
+- El dominio neutro pasa los filtros de palabras clave.
+- El contenido de la página (logo de Microsoft, diseño idéntico al login real) hace el trabajo persuasivo, no el nombre del dominio.
+- Muchas víctimas ni leen el dominio completo; ven el candado y el diseño familiar.
+
+O sea: con infraestructura bien armada (ASN limpio, SSL válido, dominio neutro), el phishing se apoya en la superficie visual para convencer, y deja el dominio como un "sobreviviente" de los filtros.
+
+Además los dominios con palabras sospechosas cómo las que ves los cacha DNS hunting.
+
+Resumen: un buen dominio de phishing no intenta convencer, intenta no delatarse. La persuasión la hace la página; el dominio solo tiene que sobrevivir los filtros.
+
+
