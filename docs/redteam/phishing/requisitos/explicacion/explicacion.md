@@ -198,3 +198,64 @@ En la práctica moderna, el typosquatting puro ha perdido fuerza como vector pri
 
 Checate we https://typosquatting-finder.circl.lu/
 
+### TLD Confusion
+
+Rapido juega con el .com, .ca, .net, etc...
+
+Pues hay empresas que usan otros TLD's entonces jala:
+```
+typosquat:    empreza.com/login        (nombre mal escrito, más fácil de notar)
+TLD confusion: empresa.co/login         (nombre perfecto, solo TLD distinto)
+```
+> Nota: Algunos TLDs (.tk, .ml, .ga — gratis o muy baratos) tienen fama de abuso, pero otros (.co, .net, .org, TLDs de países como .ca, .in) son perfectamente respetables y pasan filtros básicos.
+
+Variantes
+
+| Tipo                           | Ejemplo                                               | Contexto                                           |
+| ------------------------------ | ----------------------------------------------------- | -------------------------------------------------- |
+| **Mismo nombre, TLD distinto** | `empresa.co` vs `empresa.com`                         | La variante del texto                              |
+| **TLD de país relacionado**    | `empresa.com.mx` vs `empresa-mx.com`                  | Confusión con geolocalización                      |
+| **TLD con typo**               | `empresa.co` vs `empresa.cm` / `empresa.om` (omisión) | Typosquat híbrido                                  |
+| **TLD "moderno" creíble**      | `empresa.app`, `empresa.cloud`                        | Los TLDs nuevos parecen legítimos por ser modernos |
+
+De igual forma pues una empresa madura monitorea esas variantes.
+
+### Abusando de los subdominios (Benditos SaaS)
+
+Con la adopción masiva de SaaS, muchas plataformas asignan a cada cliente un subdominio propio en el dominio del proveedor. El ejemplo es Okta:
+```
+empresa-a.okta.com
+empresa-b.okta.com
+tuempresa.okta.com
+```
+Esto es estándar en: Okta, Microsoft (login.microsoftonline.com/<tenant>), Workday, Salesforce (empresa.salesforce.com), Freshdesk, etc.
+¿Por qué es relevante para phishing?
+El problema de confianza heredada: cuando un empleado ve un enlace como:
+
+```
+https://tuempresa.okta.com/...
+```
+
+Nosotros no podemos crear subdominios dentro de okta.com (no es nuestro). Pero sí podemos hacer dos cosas:
+
+- Registrar nuestro propio dominio y crear un subdominio con el nombre de la victima:
+
+```
+Dominio del atacante:  evil.com
+Subdominio creado:     tuempresa.evil.com
+```
+
+- Usar un servicio en la nube que dé subdominios gratuitos
+
+```
+tuempresa.pages.dev
+tuempresa.azurewebsites.net
+tuempresa.workers.dev
+```
+
+En ambos casos, el enlace contiene el nombre de la empresa objetivo en un subdominio. Y como el filtro de seguridad no puede bloquear todo lo que lleve ese nombre (porque bloquearía también los accesos legítimos de Okta), el enlace pasa la barrera.
+
+Resumen en 3 líneas
+- Los SaaS como Okta hacen normal que el nombre de una empresa aparezca en un subdominio.
+- Eso anula la defensa: los filtros no pueden bloquear por el nombre de la empresa sin dañar servicios legítimos.
+- Nosotros aprovechamos ese hueco poniendo el nombre de la víctima en subdominios de nuestros propios dominios o servicios cloud para que el phishing parezca una puerta de entrada corporativa legítima.
