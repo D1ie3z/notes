@@ -306,3 +306,68 @@ Sino que sabes que show:
 
 
 > Resumen: el emisor del certificado SSL es visible y tiene reputación; los filtros de seguridad tratan los certificados gratuitos (Let's Encrypt) como un factor de riesgo adicional, por eso se recomienda certificado pago como una capa más de legitimidad aparente (OV/EV).
+
+## Phishing Files
+
+### Public templates
+
+En GitHub y foros hay repositorios con plantillas de phishing listas para usar: páginas de login falsas de Microsoft, Google, O365, etc. Herramientas conocidas (como las que usan kits de phishing) traen estas plantillas integrada.
+
+El problema: "highly signatured" (muy firmadas). Una firma (signature) es un patrón único que las soluciones de seguridad usan para identificar algo conocido. Piensa en el antivirus: no solo detecta "virus en general", detecta el hash exacto o cadenas de texto específicas de malware conocido.
+
+Con las plantillas públicas pasa igual. Una plantilla de "login de Microsoft" que 10,000 personas descargaron de GitHub tiene:
+
+- El mismo HTML (mismo código, mismos IDs de elementos, mismos comentarios)
+- Las mismas imágenes (mismo logo, mismo favicon — con el mismo hash)
+- El mismo JavaScript (mismo orden, mismas funciones)
+- A veces hasta el mismo texto con errores de traducción o typos
+
+Todo eso es "firmable". Un sandbox, un proxy con detección de phishing o un equipo de threat intel solo necesita:
+
+- Analizar una vez la plantilla pública → extraer sus firmas (hashes de archivos, cadenas únicas como id="loginFormM365", URLs de recursos).
+- Revisar cualquier sitio nuevo → ¿coincide alguna firma? → bam, detectado en milisegundos, sin análisis de comportamiento.
+
+
+Ejemplo: si la plantilla incluye una imagen logo.png con hash SHA256 abc123..., y esa misma imagen aparece en el sitio que estás analizando, el defensor sabe que usaste ese kit — aunque hayas cambiado el dominio, el ASN y el certificado. Una sola firma quema toda tu infraestructura nueva.
+
+La recomendación:
+
+Hacerla desde cero = nuevas firmas. El HTML es tuyo, las imágenes son tus propias capturas procesadas, el CSS es distinto. Los filtros ya no pueden compararte con la plantilla pública conocida. Conecta con todo el módulo: personalización = supervivencia.
+
+### Sitios clonados
+
+Ya lo puse en requisitos, literalmente clona un sitio jaja.
+
+El pedo:
+
+Se detecta facil.
+
+- Firmas de contenido idénticas al original.
+El clon es una copia bit a bit del sitio real. Los defensores de Microsoft tienen firmas exactas de sus propias páginas. Tu clon coincide con la firma del original + tu dominio es nuevo ≠ microsoft.com = contradicción flagrantemente sospechosa: "¿por qué la página exacta de Microsoft está hospedada en login-ms365-verify.net con 12 días de edad?".
+- Ruido técnico del clonado.
+Las herramientas de clonado dejan huellas:
+
+    -  URLs rotas (recursos que no se descargaron: https://original.com/asset.js apuntando al sitio real desde tu dominio falso)
+    - Código sobrante (scripts que llaman a dominios legítimos, comentarios del CMS original)
+    Estructura de archivos característica de la herramienta de clonado
+
+- Los defensores de marcas grandes cazan activamente.
+Gmail, AWS, Outlook son los más clonados del mundo → tienen los sistemas de detección más entrenados precisamente para réplicas de su contenido. El texto dice que "upcoming modules" mostrarán métodos de detección vía clonado — casi seguro incluirán comparación de firmas, detección de recursos externos, y análisis de similitud de DOM.
+
+La recomendación:
+
+```
+Réplica exacta del login de Microsoft  → máximo convencimiento, máxima firma
+Página genérica sin branding           → mínima firma, pero la víctima no entiende qué pedir
+Página con estilo PROPIO que sugiere Microsoft → buen equilibrio
+```
+
+| Opción                          | Detección por firmas   | ¿La víctima entiende? | Veredicto       |
+| ------------------------------- | ---------------------- | --------------------- | --------------- |
+| Plantilla pública de GitHub     | ☠️ Instantánea         | ✅                     | Descartar       |
+| Clon exacto de Microsoft        | ☠️ Alta (marca cazada) | ✅                     | Descartar       |
+| Clon de una marca pequeña/rara  | ⚠️ Media-baja          | ✅                     | Viable          |
+| Custom "similar pero diferente" | ✅ Baja                 | ✅                     | **Recomendado** |
+
+> Resumen: plantillas públicas y clones exactos están firmados y cazados; la vía es desarrollar contenido propio que comunique la misma intención (entra con tus credenciales Microsoft) con código, imágenes y estructura únicos.
+
