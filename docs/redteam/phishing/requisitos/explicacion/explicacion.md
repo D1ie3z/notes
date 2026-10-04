@@ -162,3 +162,39 @@ Aquí está el factor psicológico, quizá el más potente:
 - Un correo de "empaques del norte" pidiendo "confirmar datos de pago para liberar tu envío" no activa las mismas alarmas mentales que uno de "Microsoft" pidiendo contraseña.
 
 > Resumen: en lugar de suplantar a la empresa objetivo (fuertemente defendida), se suplantan a sus proveedores (casi indefendidos), explotando la confianza laboral existente y la asimetría de defensas.
+
+### Typosquatting
+Typosquatting (o "cybersquatting tipográfico") = registrar dominios que son errores de tipeo probables de un dominio legítimo, para interceptar a los usuarios que cometen esos errores.
+El fundamento es un hecho humano simple: la gente escribe mal. Estudios de tráfico muestran que errores comunes como gogle.com (falta una 'o') reciben tráfico real de personas que intentaban ir a Google.
+
+Ejemplo:
+```
+Legítimo:    google.com
+Typosquat:   gogle.com       (letra omitida)
+             googel.com      (transposición)
+             gooogle.com     (letra duplicada)
+             goog1e.com      (letra → número)
+             g00gle.com      (letras → números)
+             google.co       (TLD incorrecto)
+             google.com.mx   (si el objetivo es otro país) 
+```
+También existe el combo squatting: errores en subdominios o rutas (google.com.evil.com — el dominio real de Google seguido de un dominio del atacante; ojo con leer URLs de derecha a izquierda en el dominio).
+
+OJO PIOJO. Está técnica tiene riesgo:
+
+- Los filtros ya la anticipan
+Las soluciones de seguridad (gateways de email, secure web gateways, navegadores) llevan años manteniendo listas de dominios typosquat de marcas populares:
+
+    - gogle.com, facebok.com, paypa1.com → bloqueados por defecto en muchas corporaciones.
+    - Algoritmos de similitud de cadenas (como la distancia de Levenshtein) calculan qué tan parecido es un dominio a uno conocido y lo bloquean si la distancia es muy corta.
+
+En la práctica moderna, el typosquatting puro ha perdido fuerza como vector principal de phishing por todo lo anterior. Sin embargo, sigue siendo relevante en escenarios:
+
+- Marcas pequeñas o regionales: una empresa local o un proveedor pequeño (¡conexión con el apartado de Supplier Impersonation!) no monitorea sus variantes typosquat. empaquesdelnorte.com → empaquesdelnorte.com con errores pasa desapercibido.
+- Errores en el remitente, no en el enlace: el dominio se usa para suplantar remitente (facturas@gopgle.com), donde el filtro anti-spoofing (SPF/DKIM) es la única defensa y muchos dominios no lo tienen bien configurado.
+- Punycode / homoglifos: variante evolucionada — usar caracteres Unicode que se ven idénticos (una 'а' cirílica en lugar de 'a' latina): аррle.com. Muchos navegadores ya mitigan esto, pero es la versión moderna del concepto.
+  
+> Resumen: el typosquatting aposta a los errores humanos de escritura, pero es una de las técnicas mejor defendidas, es útil solo contra objetivos sin monitoreo o como capa de suplantación de remitente.
+
+Checate we https://typosquatting-finder.circl.lu/
+
