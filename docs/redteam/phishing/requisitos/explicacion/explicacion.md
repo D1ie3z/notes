@@ -11,6 +11,8 @@ No fue suficiente el poner solo las bases master of puppet...
 
 ## Infraestructura
 
+> Cómo elegirla y que tener en cuenta
+
 ### Localización geografíca
 Al seleccionar la infraestructura, lo ideal es elegir un centro de datos ubicado en el mismo país o región que el objetivo, ya que la dirección IP subyacente del dominio puede ser analizada por un producto de seguridad. 
 Sin embargo, si se elige estratégicamente, también se puede utilizar infraestructura de otros países. 
@@ -49,3 +51,11 @@ Es decir si tu usas un dominio nuevo es más probable que sea flageado si usas s
 | **URL shorteners**           | `bit.ly/...`                    | Encubren el destino final              |
 
 Puedes usar: https://lots-project.com/ para apoyarte
+
+### Infraestructura comprometida
+
+¿Sabes hackear? Pues utiliza un server comprometido y ahí hostea tu phishing ;)
+
+### Evita usar IPs abusadas
+Ve la reputación de la IP antes de hacer tu phishing, si está flageada GG estará en una blacklist.
+
