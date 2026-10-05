@@ -364,12 +364,12 @@ Página genérica sin branding           → mínima firma, pero la víctima no 
 Página con estilo PROPIO que sugiere Microsoft → buen equilibrio
 ```
 
-| Opción                          | Detección por firmas   | ¿La víctima entiende? | Veredicto       |
-| ------------------------------- | ---------------------- | --------------------- | --------------- |
-| Plantilla pública de GitHub     | ☠️ Instantánea         | ✅                     | Descartar       |
-| Clon exacto de Microsoft        | ☠️ Alta (marca cazada) | ✅                     | Descartar       |
-| Clon de una marca pequeña/rara  | ⚠️ Media-baja          | ✅                     | Viable          |
-| Custom "similar pero diferente" | ✅ Baja                 | ✅                     | **Recomendado** |
+| Opción                          | Detección por firmas | ¿La víctima entiende? | Veredicto       |
+| ------------------------------- | -------------------- | --------------------- | --------------- |
+| Plantilla pública de GitHub     | Instantánea          | ✅                     | Descartar       |
+| Clon exacto de Microsoft        | Alta (marca cazada)  | ✅                     | Descartar       |
+| Clon de una marca pequeña/rara  | Media-baja           | ✅                     | Viable          |
+| Custom "similar pero diferente" | Baja                 | ✅                     | **Recomendado** |
 
 > Resumen: plantillas públicas y clones exactos están firmados y cazados; la vía es desarrollar contenido propio que comunique la misma intención (entra con tus credenciales Microsoft) con código, imágenes y estructura únicos.
 
