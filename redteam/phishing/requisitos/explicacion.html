@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.10.1">
 <title data-rh="true">Explicacion | D1ie3z // N0t4s</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://soy10.site/redteam/phishing/requisitos/explicacion"><meta data-rh="true" property="og:locale" content="es"><meta data-rh="true" name="docusaurus_locale" content="es"><meta data-rh="true" name="docsearch:language" content="es"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Explicacion | D1ie3z // N0t4s"><meta data-rh="true" name="description" content="Explicación"><meta data-rh="true" property="og:description" content="Explicación"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://soy10.site/redteam/phishing/requisitos/explicacion"><link data-rh="true" rel="alternate" href="https://soy10.site/redteam/phishing/requisitos/explicacion" hreflang="es"><link data-rh="true" rel="alternate" href="https://soy10.site/redteam/phishing/requisitos/explicacion" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Red Team","item":"https://soy10.site/redteam/"},{"@type":"ListItem","position":2,"name":"Phishing","item":"https://soy10.site/redteam/phishing/"},{"@type":"ListItem","position":3,"name":"Requisitos Basicos","item":"https://soy10.site/redteam/phishing/requisitos/"},{"@type":"ListItem","position":4,"name":"Explicacion","item":"https://soy10.site/redteam/phishing/requisitos/explicacion/"}]}</script><link rel="stylesheet" href="/assets/css/styles.c791538f.css">
-<script src="/assets/js/runtime~main.311b51c7.js" defer="defer"></script>
-<script src="/assets/js/main.03560f2d.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.91079617.js" defer="defer"></script>
+<script src="/assets/js/main.2e95d3eb.js" defer="defer"></script>
 </head>
 <body>
 <svg style="display: none;"><defs>
@@ -164,6 +164,117 @@ Las soluciones de seguridad (gateways de email, secure web gateways, navegadores
 <blockquote>
 <p>Resumen: el typosquatting aposta a los errores humanos de escritura, pero es una de las técnicas mejor defendidas, es útil solo contra objetivos sin monitoreo o como capa de suplantación de remitente.</p>
 </blockquote>
-<p>Checate we <a href="https://typosquatting-finder.circl.lu/" target="_blank" rel="noopener noreferrer" class="">https://typosquatting-finder.circl.lu/</a></p></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/redteam/phishing/requisitos"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Requisitos Basicos</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/bugbounty"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Bug Bounty</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#explicación" class="table-of-contents__link toc-highlight">Explicación</a></li><li><a href="#infraestructura" class="table-of-contents__link toc-highlight">Infraestructura</a><ul><li><a href="#localización-geografíca" class="table-of-contents__link toc-highlight">Localización geografíca</a></li><li><a href="#asn" class="table-of-contents__link toc-highlight">ASN</a></li><li><a href="#sitios-de-confianza" class="table-of-contents__link toc-highlight">Sitios de confianza</a></li><li><a href="#infraestructura-comprometida" class="table-of-contents__link toc-highlight">Infraestructura comprometida</a></li><li><a href="#evita-usar-ips-abusadas" class="table-of-contents__link toc-highlight">Evita usar IPs abusadas</a></li></ul></li><li><a href="#dominios" class="table-of-contents__link toc-highlight">Dominios</a><ul><li><a href="#seleccionar" class="table-of-contents__link toc-highlight">Seleccionar</a></li><li><a href="#proveedores-y-suplantar-su-identidad" class="table-of-contents__link toc-highlight">Proveedores y suplantar su identidad</a></li><li><a href="#typosquatting" class="table-of-contents__link toc-highlight">Typosquatting</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">// D1ie3z — just a random one who loves hacking stuff</div></div></div></footer></div>
+<p>Checate we <a href="https://typosquatting-finder.circl.lu/" target="_blank" rel="noopener noreferrer" class="">https://typosquatting-finder.circl.lu/</a></p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="tld-confusion">TLD Confusion<a href="#tld-confusion" class="hash-link" aria-label="Enlace directo al TLD Confusion" title="Enlace directo al TLD Confusion" translate="no">​</a></h3>
+<p>Rapido juega con el .com, .ca, .net, etc...</p>
+<p>Pues hay empresas que usan otros TLD&#x27;s entonces jala:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">typosquat:    empreza.com/login        (nombre mal escrito, más fácil de notar)</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">TLD confusion: empresa.co/login         (nombre perfecto, solo TLD distinto)</span><br></div></code></pre></div></div>
+<blockquote>
+<p>Nota: Algunos TLDs (.tk, .ml, .ga — gratis o muy baratos) tienen fama de abuso, pero otros (.co, .net, .org, TLDs de países como .ca, .in) son perfectamente respetables y pasan filtros básicos.</p>
+</blockquote>
+<p>Variantes</p>
+<table><thead><tr><th>Tipo</th><th>Ejemplo</th><th>Contexto</th></tr></thead><tbody><tr><td><strong>Mismo nombre, TLD distinto</strong></td><td><code>empresa.co</code> vs <code>empresa.com</code></td><td>La variante del texto</td></tr><tr><td><strong>TLD de país relacionado</strong></td><td><code>empresa.com.mx</code> vs <code>empresa-mx.com</code></td><td>Confusión con geolocalización</td></tr><tr><td><strong>TLD con typo</strong></td><td><code>empresa.co</code> vs <code>empresa.cm</code> / <code>empresa.om</code> (omisión)</td><td>Typosquat híbrido</td></tr><tr><td><strong>TLD &quot;moderno&quot; creíble</strong></td><td><code>empresa.app</code>, <code>empresa.cloud</code></td><td>Los TLDs nuevos parecen legítimos por ser modernos</td></tr></tbody></table>
+<p>De igual forma pues una empresa madura monitorea esas variantes.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="abusando-de-los-subdominios-benditos-saas">Abusando de los subdominios (Benditos SaaS)<a href="#abusando-de-los-subdominios-benditos-saas" class="hash-link" aria-label="Enlace directo al Abusando de los subdominios (Benditos SaaS)" title="Enlace directo al Abusando de los subdominios (Benditos SaaS)" translate="no">​</a></h3>
+<p>Con la adopción masiva de SaaS, muchas plataformas asignan a cada cliente un subdominio propio en el dominio del proveedor. El ejemplo es Okta:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">empresa-a.okta.com</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">empresa-b.okta.com</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">tuempresa.okta.com</span><br></div></code></pre></div></div>
+<blockquote>
+<p>Esto es estándar en: Okta, Microsoft (login.microsoftonline.com/tenant), Workday, Salesforce (empresa.salesforce.com), Freshdesk, etc.</p>
+</blockquote>
+<p>¿Por qué es relevante para phishing?
+El problema de confianza heredada: cuando un empleado ve un enlace como:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">https://tuempresa.okta.com/...</span><br></div></code></pre></div></div>
+<p>Nosotros no podemos crear subdominios dentro de okta.com (no es nuestro). Pero sí podemos hacer dos cosas:</p>
+<ul>
+<li class="">Registrar nuestro propio dominio y crear un subdominio con el nombre de la victima:</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">Dominio del atacante:  evil.com</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">Subdominio creado:     tuempresa.evil.com</span><br></div></code></pre></div></div>
+<ul>
+<li class="">Usar un servicio en la nube que dé subdominios gratuitos</li>
+</ul>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">tuempresa.pages.dev</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">tuempresa.azurewebsites.net</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">tuempresa.workers.dev</span><br></div></code></pre></div></div>
+<p>En ambos casos, el enlace contiene el nombre de la empresa objetivo en un subdominio. Y como el filtro de seguridad no puede bloquear todo lo que lleve ese nombre (porque bloquearía también los accesos legítimos de Okta), el enlace pasa la barrera.</p>
+<p>Resumen en 3 líneas</p>
+<ul>
+<li class="">Los SaaS como Okta hacen normal que el nombre de una empresa aparezca en un subdominio.</li>
+<li class="">Eso anula la defensa: los filtros no pueden bloquear por el nombre de la empresa sin dañar servicios legítimos.</li>
+<li class="">Nosotros aprovechamos ese hueco poniendo el nombre de la víctima en subdominios de nuestros propios dominios o servicios cloud para que el phishing parezca una puerta de entrada corporativa legítima.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="certificados-ssl">Certificados SSL<a href="#certificados-ssl" class="hash-link" aria-label="Enlace directo al Certificados SSL" title="Enlace directo al Certificados SSL" translate="no">​</a></h2>
+<p>Reputación, esa palabra basicamente es la que abarca el phishing. El tipo de certificado SSL también tiene reputación.</p>
+<blockquote>
+<p>No todas las CAs pesan igual</p>
+</blockquote>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="las-ca-gratuitas">Las CA gratuitas<a href="#las-ca-gratuitas" class="hash-link" aria-label="Enlace directo al Las CA gratuitas" title="Enlace directo al Las CA gratuitas" translate="no">​</a></h3>
+<p>Let&#x27;s Encrypt es la más famosa: emite certificados gratis, automáticamente y sin verificar quién eres. Solo demuestras que controlas el dominio (con un proceso automatizado de 2 minutos).
+Esto fue revolucionario para internet (HTTPS para todos), pero tiene un lado oscuro:</p>
+<ul>
+<li class="">Un atacante puede tener un certificado válido en 5 minutos, sin pagar, sin identificarse, sin ningún humano revisando nada.</li>
+<li class="">Por eso, el tráfico HTTPS de certificados gratuitos es estadísticamente mucho más abusado que el de CAs pagas.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="las-ca-pagas-comerciales">Las CA pagas (comerciales)<a href="#las-ca-pagas-comerciales" class="hash-link" aria-label="Enlace directo al Las CA pagas (comerciales)" title="Enlace directo al Las CA pagas (comerciales)" translate="no">​</a></h2>
+<p>Certificados de DigiCert, Sectigo, GlobalSign, etc. cuestan dinero (desde ~$50 hasta cientos de dólares al año) y a menudo incluyen verificación de la organización (te piden documentos, verifican que la empresa existe). Emitir uno requiere esfuerzo e identidad → el atacante deja rastro y gasta dinero.</p>
+<p>Los productos de seguridad (EDR, SIEM, proxies, gateways) pueden configurar una alerta del tipo:</p>
+<blockquote>
+<p>&quot;Un equipo interno se conectó a un sitio que usa certificado de Let&#x27;s Encrypt y el dominio tiene menos de 30 días&quot;</p>
+</blockquote>
+<p><strong>Ojo con la lógica</strong>: esto no significa que todo sitio con Let&#x27;s Encrypt sea malicioso (millones de sitios legítimos lo usan). Significa que es un factor más que sube la puntuación de riesgo. Combinado con otros indicadores (dominio recién registrado, ASN barato, palabras clave sospechosas...), ayuda a priorizar qué revisar.</p>
+<p>¿Entonces qué hago?</p>
+<table><thead><tr><th></th><th>Certificado gratis</th><th>Certificado pago</th></tr></thead><tbody><tr><td>Costo</td><td>$0</td><td>~$50-500/año</td></tr><tr><td>¿Identidad verificada?</td><td>No</td><td>Sí (al menos el dominio/organización)</td></tr><tr><td>Señal para los filtros</td><td>&quot;Más probabilidad de abuso&quot;</td><td>&quot;Parece más serio&quot;</td></tr><tr><td>Esfuerzo de emisión</td><td>5 minutos, anónimo</td><td>Requiere pago y datos</td></tr></tbody></table>
+<p>Si tu dominio ya es neutro, con ASN limpio y registro pagado, el certificado pago es la última capa de &quot;legitimidad&quot;: quita un indicador que los defensores usan para priorizar. El conjunto completo dice &quot;esto parece un negocio real establecido&quot;, no &quot;esto parece algo montado ayer&quot;. (Pues si es más costoso pero vale la pena invertir para que sea más legitimo</p>
+<p>Ole lo caracole: <a href="https://www.namecheap.com/security/ssl-certificates/" target="_blank" rel="noopener noreferrer" class="">https://www.namecheap.com/security/ssl-certificates/</a></p>
+<p>Sino que sabes que show:</p>
+<table><thead><tr><th>Tipo</th><th>Qué verifica</th><th>Precio aprox. en la imagen</th><th>Lectura de un defensor</th></tr></thead><tbody><tr><td><strong>DV (Domain Validation)</strong></td><td>Solo que controlas el dominio (automático, sin humanos)</td><td>C$15-49</td><td>&quot;El mínimo posible&quot; — casi igual de anónimo que Let&#x27;s Encrypt, pero emitido por CA paga</td></tr><tr><td><strong>OV (Organization Validation)</strong></td><td>Que la <strong>organización existe</strong>: piden documentos legales, dirección, teléfono</td><td>C$49-71</td><td>&quot;Alguien verificó que esta empresa existe&quot; — señal más fuerte</td></tr><tr><td><strong>EV (Extended Validation)</strong></td><td>Verificación profunda de la empresa (registros, operación, reputación)</td><td>C$105</td><td>El nivel máximo; antes mostraba el nombre de la empresa en verde en el navegador</td></tr></tbody></table>
+<blockquote>
+<p>Resumen: el emisor del certificado SSL es visible y tiene reputación; los filtros de seguridad tratan los certificados gratuitos (Let&#x27;s Encrypt) como un factor de riesgo adicional, por eso se recomienda certificado pago como una capa más de legitimidad aparente (OV/EV).</p>
+</blockquote>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="phishing-files">Phishing Files<a href="#phishing-files" class="hash-link" aria-label="Enlace directo al Phishing Files" title="Enlace directo al Phishing Files" translate="no">​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="public-templates">Public templates<a href="#public-templates" class="hash-link" aria-label="Enlace directo al Public templates" title="Enlace directo al Public templates" translate="no">​</a></h3>
+<p>En GitHub y foros hay repositorios con plantillas de phishing listas para usar: páginas de login falsas de Microsoft, Google, O365, etc. Herramientas conocidas (como las que usan kits de phishing) traen estas plantillas integrada.</p>
+<p>El problema: &quot;highly signatured&quot; (muy firmadas). Una firma (signature) es un patrón único que las soluciones de seguridad usan para identificar algo conocido. Piensa en el antivirus: no solo detecta &quot;virus en general&quot;, detecta el hash exacto o cadenas de texto específicas de malware conocido.</p>
+<p>Con las plantillas públicas pasa igual. Una plantilla de &quot;login de Microsoft&quot; que 10,000 personas descargaron de GitHub tiene:</p>
+<ul>
+<li class="">El mismo HTML (mismo código, mismos IDs de elementos, mismos comentarios)</li>
+<li class="">Las mismas imágenes (mismo logo, mismo favicon — con el mismo hash)</li>
+<li class="">El mismo JavaScript (mismo orden, mismas funciones)</li>
+<li class="">A veces hasta el mismo texto con errores de traducción o typos</li>
+</ul>
+<p>Todo eso es &quot;firmable&quot;. Un sandbox, un proxy con detección de phishing o un equipo de threat intel solo necesita:</p>
+<ul>
+<li class="">Analizar una vez la plantilla pública → extraer sus firmas (hashes de archivos, cadenas únicas como id=&quot;loginFormM365&quot;, URLs de recursos).</li>
+<li class="">Revisar cualquier sitio nuevo → ¿coincide alguna firma? → bam, detectado en milisegundos, sin análisis de comportamiento.</li>
+</ul>
+<p>Ejemplo: si la plantilla incluye una imagen logo.png con hash SHA256 abc123..., y esa misma imagen aparece en el sitio que estás analizando, el defensor sabe que usaste ese kit — aunque hayas cambiado el dominio, el ASN y el certificado. Una sola firma quema toda tu infraestructura nueva.</p>
+<p>La recomendación:</p>
+<p>Hacerla desde cero = nuevas firmas. El HTML es tuyo, las imágenes son tus propias capturas procesadas, el CSS es distinto. Los filtros ya no pueden compararte con la plantilla pública conocida. Conecta con todo el módulo: personalización = supervivencia.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="sitios-clonados">Sitios clonados<a href="#sitios-clonados" class="hash-link" aria-label="Enlace directo al Sitios clonados" title="Enlace directo al Sitios clonados" translate="no">​</a></h3>
+<p>Ya lo puse en requisitos, literalmente clona un sitio jaja.</p>
+<p>El pedo:</p>
+<p>Se detecta facil.</p>
+<ul>
+<li class="">
+<p>Firmas de contenido idénticas al original.
+El clon es una copia bit a bit del sitio real. Los defensores de Microsoft tienen firmas exactas de sus propias páginas. Tu clon coincide con la firma del original + tu dominio es nuevo ≠ microsoft.com = contradicción flagrantemente sospechosa: &quot;¿por qué la página exacta de Microsoft está hospedada en login-ms365-verify.net con 12 días de edad?&quot;.</p>
+</li>
+<li class="">
+<p>Ruido técnico del clonado.
+Las herramientas de clonado dejan huellas:</p>
+<ul>
+<li class="">URLs rotas (recursos que no se descargaron: <a href="https://original.com/asset.js" target="_blank" rel="noopener noreferrer" class="">https://original.com/asset.js</a> apuntando al sitio real desde tu dominio falso)</li>
+<li class="">Código sobrante (scripts que llaman a dominios legítimos, comentarios del CMS original)
+Estructura de archivos característica de la herramienta de clonado</li>
+</ul>
+</li>
+<li class="">
+<p>Los defensores de marcas grandes cazan activamente.
+Gmail, AWS, Outlook son los más clonados del mundo → tienen los sistemas de detección más entrenados precisamente para réplicas de su contenido. El texto dice que &quot;upcoming modules&quot; mostrarán métodos de detección vía clonado — casi seguro incluirán comparación de firmas, detección de recursos externos, y análisis de similitud de DOM.</p>
+</li>
+</ul>
+<p>La recomendación:</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#F8F8F2;--prism-background-color:#282A36"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar" style="color:#F8F8F2;background-color:#282A36"><code class="codeBlockLines_e6Vv"><div class="token-line" style="color:#F8F8F2"><span class="token plain">Réplica exacta del login de Microsoft  → máximo convencimiento, máxima firma</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">Página genérica sin branding           → mínima firma, pero la víctima no entiende qué pedir</span><br></div><div class="token-line" style="color:#F8F8F2"><span class="token plain">Página con estilo PROPIO que sugiere Microsoft → buen equilibrio</span><br></div></code></pre></div></div>
+<table><thead><tr><th>Opción</th><th>Detección por firmas</th><th>¿La víctima entiende?</th><th>Veredicto</th></tr></thead><tbody><tr><td>Plantilla pública de GitHub</td><td>☠️ Instantánea</td><td>✅</td><td>Descartar</td></tr><tr><td>Clon exacto de Microsoft</td><td>☠️ Alta (marca cazada)</td><td>✅</td><td>Descartar</td></tr><tr><td>Clon de una marca pequeña/rara</td><td>⚠️ Media-baja</td><td>✅</td><td>Viable</td></tr><tr><td>Custom &quot;similar pero diferente&quot;</td><td>✅ Baja</td><td>✅</td><td><strong>Recomendado</strong></td></tr></tbody></table>
+<blockquote>
+<p>Resumen: plantillas públicas y clones exactos están firmados y cazados; la vía es desarrollar contenido propio que comunique la misma intención (entra con tus credenciales Microsoft) con código, imágenes y estructura únicos.</p>
+</blockquote></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Página del documento"><a class="pagination-nav__link pagination-nav__link--prev" href="/redteam/phishing/requisitos"><div class="pagination-nav__sublabel">Anterior</div><div class="pagination-nav__label">Requisitos Basicos</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/bugbounty"><div class="pagination-nav__sublabel">Siguiente</div><div class="pagination-nav__label">Bug Bounty</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#explicación" class="table-of-contents__link toc-highlight">Explicación</a></li><li><a href="#infraestructura" class="table-of-contents__link toc-highlight">Infraestructura</a><ul><li><a href="#localización-geografíca" class="table-of-contents__link toc-highlight">Localización geografíca</a></li><li><a href="#asn" class="table-of-contents__link toc-highlight">ASN</a></li><li><a href="#sitios-de-confianza" class="table-of-contents__link toc-highlight">Sitios de confianza</a></li><li><a href="#infraestructura-comprometida" class="table-of-contents__link toc-highlight">Infraestructura comprometida</a></li><li><a href="#evita-usar-ips-abusadas" class="table-of-contents__link toc-highlight">Evita usar IPs abusadas</a></li></ul></li><li><a href="#dominios" class="table-of-contents__link toc-highlight">Dominios</a><ul><li><a href="#seleccionar" class="table-of-contents__link toc-highlight">Seleccionar</a></li><li><a href="#proveedores-y-suplantar-su-identidad" class="table-of-contents__link toc-highlight">Proveedores y suplantar su identidad</a></li><li><a href="#typosquatting" class="table-of-contents__link toc-highlight">Typosquatting</a></li><li><a href="#tld-confusion" class="table-of-contents__link toc-highlight">TLD Confusion</a></li><li><a href="#abusando-de-los-subdominios-benditos-saas" class="table-of-contents__link toc-highlight">Abusando de los subdominios (Benditos SaaS)</a></li></ul></li><li><a href="#certificados-ssl" class="table-of-contents__link toc-highlight">Certificados SSL</a><ul><li><a href="#las-ca-gratuitas" class="table-of-contents__link toc-highlight">Las CA gratuitas</a></li></ul></li><li><a href="#las-ca-pagas-comerciales" class="table-of-contents__link toc-highlight">Las CA pagas (comerciales)</a></li><li><a href="#phishing-files" class="table-of-contents__link toc-highlight">Phishing Files</a><ul><li><a href="#public-templates" class="table-of-contents__link toc-highlight">Public templates</a></li><li><a href="#sitios-clonados" class="table-of-contents__link toc-highlight">Sitios clonados</a></li></ul></li></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="footer__bottom text--center"><div class="footer__copyright">// D1ie3z — just a random one who loves hacking stuff</div></div></div></footer></div>
 </body>
 </html>
