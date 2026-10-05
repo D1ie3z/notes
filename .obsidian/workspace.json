@@ -13,9 +13,23 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "docs/redteam/phishing/detection/explicacion/explicacion.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "explicacion"
+            }
+          },
+          {
+            "id": "68009159eef855d1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "docs/redteam/phishing/requisitos/explicacion/explicacion.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "explicacion"
@@ -191,6 +205,11 @@
   },
   "active": "5b4e62a3c49aff3e",
   "lastOpenFiles": [
+    "docs/redteam/phishing/requisitos/explicacion/explicacion.md",
+    "docs/redteam/phishing/detection/explicacion/explicacion.md",
+    "Pasted image 20261005130207.png",
+    "docs/redteam/phishing/detection/index.md",
+    "docs/redteam/phishing/detection/explicacion",
     "README.md"
   ]
 }
