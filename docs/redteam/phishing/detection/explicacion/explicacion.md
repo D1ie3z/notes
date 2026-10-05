@@ -101,7 +101,7 @@ Esto va más allá del certificado:
 
 Las herramientas populares son doblemente riesgosas: firmas de contenido + firmas de protocolo. Y conecta con el punto del SSL anterior: el certificado se ve en claro, **y también el handshake**.
 
-## 7. Domain Reputation & Categorization
+###  Domain Reputation & Categorization
 
 **Concepto:** cada dominio tiene un "historial" que los servicios de reputación calculan:
 
@@ -122,7 +122,7 @@ Las herramientas populares son doblemente riesgosas: firmas de contenido + firma
 
 > **Resumen:** la reputación no se configura, se **construye con tiempo** o se **hereda** (de ahí compromised infrastructure y aged domains).
 
-## 8. Server Characteristics
+### Server Characteristics
 
 El servidor también es analizado:
 
@@ -135,7 +135,7 @@ El servidor también es analizado:
 
 **Passive DNS:** los defensores consultan históricos de DNS y ven **toda la genealogía** de una IP. Por eso el material insistía tanto en ASN limpio: una IP con historial limpio en un ASN decente hereda esa confianza.
 
-## 9. OCR Detection
+### OCR Detection
 
 **Concepto:** algunos atacantes ponen el texto **dentro de imágenes** (para que los filtros de contenido no lean "Ingrese su contraseña"). La respuesta: **OCR**, los sistemas extraen texto de las imágenes y lo analizan igual.
 
@@ -143,7 +143,7 @@ El servidor también es analizado:
 
 **"Miscellaneous":** el caso opuesto, sitios que son **solo imágenes** (página entera como screenshot para evadir análisis de HTML). Eso también es detectable como anómalo y baja la confianza.
 
-## 10. Sandbox Detection
+### Sandbox Detection
 
 **Concepto:** abrir la URL en una máquina virtual controlada que **simula ser un usuario real** (browser, OS, interacciones), registrar todo:
 
@@ -160,13 +160,13 @@ El servidor también es analizado:
 
 **Nota del texto:** reconoce que los sitios usan evasion contra sandboxes (detectar VMs, solo activarse ante "humanos reales") — de ahí que los sandboxes modernos imitan comportamiento humano.
 
-## 11. Machine Learning / AI
+### Machine Learning / AI
 
 **Concepto:** modelos que puntúan riesgo combinando todo lo anterior: similitud visual, análisis de contenido, URL, campos de input. Y el ejemplo curioso del texto: usar ChatGPT con una captura de pantalla del login de Microsoft para clasificarlo como legítimo o phishing.
 
 **Realidad práctica:** los ML models son especialmente buenos detectando **anomalías combinadas**, ninguna señal sola, pero el patrón agregado ("dominio joven + ASN raro + formulario de credenciales + tráfico de email masivo") es muy difícil de normalizar.
 
-## 12. Miscellaneous (los detalles pequeños)
+### Miscellaneous (los detalles pequeños)
 
 - **Falta de meta tags**: sitios legítimos suelen tener `<meta description>`, Open Graph tags, etc. Un phishing apurado suele omitirlos. No es prueba, pero **baja la puntuación de confianza**.
     
