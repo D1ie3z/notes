@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/redteam/phishing/detection/explicacion/explicacion.md",
+                "file": "docs/redteam/phishing/requisitos/Hosting.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "explicacion"
+              "title": "Hosting"
             }
           },
           {
@@ -206,6 +206,8 @@
   "active": "5b4e62a3c49aff3e",
   "lastOpenFiles": [
     "docs/redteam/phishing/requisitos/explicacion/explicacion.md",
+    "docs/redteam/phishing/requisitos/Hosting.md",
+    "docs/redteam/phishing/recursos/recursos.md",
     "docs/redteam/phishing/detection/explicacion/explicacion.md",
     "Pasted image 20261005130207.png",
     "docs/redteam/phishing/detection/index.md",

@@ -43,3 +43,5 @@ sidebar_position: 1
 - https://www.browserling.com/
 - https://hybrid-analysis.com/
 - https://radar.cloudflare.com/scan
+
+https://github.com/mthcht/awesome-lists/blob/main/Lists/suspicious_tlds_list.csv

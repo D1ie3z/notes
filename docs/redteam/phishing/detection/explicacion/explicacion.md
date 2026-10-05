@@ -122,7 +122,7 @@ Las herramientas populares son doblemente riesgosas: firmas de contenido + firma
 
 > **Resumen:** la reputación no se configura, se **construye con tiempo** o se **hereda** (de ahí compromised infrastructure y aged domains).
 
-### Server Characteristics
+## Server Characteristics
 
 El servidor también es analizado:
 
@@ -135,7 +135,7 @@ El servidor también es analizado:
 
 **Passive DNS:** los defensores consultan históricos de DNS y ven **toda la genealogía** de una IP. Por eso el material insistía tanto en ASN limpio: una IP con historial limpio en un ASN decente hereda esa confianza.
 
-### OCR Detection
+## OCR Detection
 
 **Concepto:** algunos atacantes ponen el texto **dentro de imágenes** (para que los filtros de contenido no lean "Ingrese su contraseña"). La respuesta: **OCR**, los sistemas extraen texto de las imágenes y lo analizan igual.
 
@@ -143,7 +143,7 @@ El servidor también es analizado:
 
 **"Miscellaneous":** el caso opuesto, sitios que son **solo imágenes** (página entera como screenshot para evadir análisis de HTML). Eso también es detectable como anómalo y baja la confianza.
 
-### Sandbox Detection
+## Sandbox Detection
 
 **Concepto:** abrir la URL en una máquina virtual controlada que **simula ser un usuario real** (browser, OS, interacciones), registrar todo:
 
@@ -166,7 +166,7 @@ El servidor también es analizado:
 
 **Realidad práctica:** los ML models son especialmente buenos detectando **anomalías combinadas**, ninguna señal sola, pero el patrón agregado ("dominio joven + ASN raro + formulario de credenciales + tráfico de email masivo") es muy difícil de normalizar.
 
-### Miscellaneous (los detalles pequeños)
+## Miscellaneous (los detalles pequeños)
 
 - **Falta de meta tags**: sitios legítimos suelen tener `<meta description>`, Open Graph tags, etc. Un phishing apurado suele omitirlos. No es prueba, pero **baja la puntuación de confianza**.
     
