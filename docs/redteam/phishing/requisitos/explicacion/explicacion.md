@@ -228,7 +228,9 @@ empresa-a.okta.com
 empresa-b.okta.com
 tuempresa.okta.com
 ```
-Esto es estándar en: Okta, Microsoft (login.microsoftonline.com/<tenant>), Workday, Salesforce (empresa.salesforce.com), Freshdesk, etc.
+
+> Esto es estándar en: Okta, Microsoft (login.microsoftonline.com/tenant), Workday, Salesforce (empresa.salesforce.com), Freshdesk, etc.
+
 ¿Por qué es relevante para phishing?
 El problema de confianza heredada: cuando un empleado ve un enlace como:
 
