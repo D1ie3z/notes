@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/redteam/phishing/requisitos/Hosting.md",
+                "file": "docs/bugbounty/recon/Favicon.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Hosting"
+              "title": "Favicon"
             }
           },
           {
@@ -205,8 +205,11 @@
   },
   "active": "5b4e62a3c49aff3e",
   "lastOpenFiles": [
-    "docs/redteam/phishing/requisitos/explicacion/explicacion.md",
+    "docs/bugbounty/recon/DNS.md",
+    "docs/bugbounty/recon/AD y analiticas.md",
+    "docs/bugbounty/recon/Adquisiciones.md",
     "docs/redteam/phishing/requisitos/Hosting.md",
+    "docs/redteam/phishing/requisitos/explicacion/explicacion.md",
     "docs/redteam/phishing/recursos/recursos.md",
     "docs/redteam/phishing/detection/explicacion/explicacion.md",
     "Pasted image 20261005130207.png",
