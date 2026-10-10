@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/bugbounty/recon/Favicon.md",
+                "file": "docs/random/intro.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Favicon"
+              "title": "intro"
             }
           },
           {
@@ -205,6 +205,11 @@
   },
   "active": "5b4e62a3c49aff3e",
   "lastOpenFiles": [
+    "docs/redteam/edr/EDR.md",
+    "docs/redteam/Desarrollo de regalos/Regalote.md",
+    "docs/redteam/Desarrollo de regalos",
+    "docs/redteam/c2/C2.md",
+    "docs/bugbounty/recon/Favicon.md",
     "docs/bugbounty/recon/DNS.md",
     "docs/bugbounty/recon/AD y analiticas.md",
     "docs/bugbounty/recon/Adquisiciones.md",
