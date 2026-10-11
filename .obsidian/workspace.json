@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/redteam/Desarrollo de regalos/Lenguaje de programación.md",
+                "file": "docs/redteam/Desarrollo de regalos/Tools/Tools.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Lenguaje de programación"
+              "title": "Tools"
             }
           },
           {
@@ -206,6 +206,7 @@
   "active": "5b4e62a3c49aff3e",
   "lastOpenFiles": [
     "docs/redteam/Desarrollo de regalos/Regalote.md",
+    "docs/redteam/index.md",
     "docs/redteam/Desarrollo de regalos/Lenguaje de programación.md",
     "docs/redteam/Desarrollo de regalos/Tools/Tools.md",
     "docs/redteam/Desarrollo de regalos/Tools",
