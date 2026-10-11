@@ -25,6 +25,13 @@ Habilidad central: cambiar fluidamente entre **la vista del developer** y **la d
 - Instalar con workload **"Desktop development with C++"** (trae el Windows SDK incluido — headers, libs, metadata, build tools).
 - Verificar: abrir *Developer PowerShell for VS 2022* o *x64 Native Tools Command Prompt* → `cl.exe` debe imprimir el banner de Microsoft C/C++.
 
+Sino usa esto:
+
+```powershell
+"C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat"
+```
+
+
 ### Visual Studio Code
 - Editor ligero para abrir rápido fuentes sueltas, scripts, configs, logs y notas. El compilado pesado sigue en VS.
 

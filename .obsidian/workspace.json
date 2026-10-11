@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/redteam/Desarrollo de regalos/Tools/Tools.md",
+                "file": "docs/redteam/edr/EDR.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Tools"
+              "title": "EDR"
             }
           },
           {
@@ -206,12 +206,12 @@
   "active": "5b4e62a3c49aff3e",
   "lastOpenFiles": [
     "docs/redteam/Desarrollo de regalos/Regalote.md",
-    "docs/redteam/index.md",
-    "docs/redteam/Desarrollo de regalos/Lenguaje de programación.md",
     "docs/redteam/Desarrollo de regalos/Tools/Tools.md",
+    "docs/redteam/Desarrollo de regalos/Lenguaje de programación.md",
+    "docs/redteam/edr/EDR.md",
+    "docs/redteam/index.md",
     "docs/redteam/Desarrollo de regalos/Tools",
     "docs/random/intro.md",
-    "docs/redteam/edr/EDR.md",
     "docs/redteam/Desarrollo de regalos",
     "docs/redteam/c2/C2.md",
     "docs/bugbounty/recon/Favicon.md",
