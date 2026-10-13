@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/redteam/edr/EDR.md",
+                "file": "docs/redteam/Desarrollo de regalos/C.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "EDR"
+              "title": "C"
             }
           },
           {
@@ -205,10 +205,12 @@
   },
   "active": "5b4e62a3c49aff3e",
   "lastOpenFiles": [
-    "docs/redteam/Desarrollo de regalos/Regalote.md",
-    "docs/redteam/Desarrollo de regalos/Tools/Tools.md",
+    "docs/redteam/phishing/requisitos/explicacion/explicacion.md",
+    "docs/redteam/Desarrollo de regalos/C.md",
     "docs/redteam/Desarrollo de regalos/Lenguaje de programación.md",
     "docs/redteam/edr/EDR.md",
+    "docs/redteam/Desarrollo de regalos/Regalote.md",
+    "docs/redteam/Desarrollo de regalos/Tools/Tools.md",
     "docs/redteam/index.md",
     "docs/redteam/Desarrollo de regalos/Tools",
     "docs/random/intro.md",
@@ -219,7 +221,6 @@
     "docs/bugbounty/recon/AD y analiticas.md",
     "docs/bugbounty/recon/Adquisiciones.md",
     "docs/redteam/phishing/requisitos/Hosting.md",
-    "docs/redteam/phishing/requisitos/explicacion/explicacion.md",
     "docs/redteam/phishing/recursos/recursos.md",
     "docs/redteam/phishing/detection/explicacion/explicacion.md",
     "Pasted image 20261005130207.png",
