@@ -63,6 +63,30 @@ UN SID SE PUEDE CONVERTIR EN UN STRING LEGIBLE
 >Ve las APIs de windows
 
 > En el contexto de **Windows**, el término "page" suele referirse principalmente al **archivo de página** (`pagefile.sys`), un archivo de sistema oculto que forma parte de la **memoria virtual** del sistema operativo. Su función principal es extender la **RAM física** del ordenador; cuando la memoria disponible se agota, Windows mueve datos de baja frecuencia a este archivo en el disco duro o SSD para liberar espacio en la RAM y mantener el rendimiento de las aplicaciones activas.
+
+## Virtual Memory & Paging
+
+Modern operating systems do not allow normal user-mode processes to directly access physical memory, meaning RAM. Instead, each process works with its own [virtual address space](https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/virtual-address-spaces). The operating system and processor translate virtual addresses into physical memory locations when needed.
+
+> Shared DLL image pages: Se trata de un mecanismo de gestión de memoria en Windows donde las páginas físicas de un archivo **DLL** compartido (como `imageres.dll` o `shared.dll`) se asignan a múltiples procesos simultáneamente para ahorrar recursos
+
+
+### Virtual Address Space
+
+Each process has its own [virtual address space](https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/virtual-address-spaces). Two different processes can use the same virtual address, but those addresses do not necessarily point to the same physical memory. For example, Process A and Process B may both have memory at `0x0000000000400000`, but these are separate virtual addresses inside separate process address spaces.
+
+A process can inspect its own address space using APIs such as [VirtualQuery](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualquery). This API receives an address and returns information about the memory region that contains it, such as the base address, region size, page state, page protection, and memory type. The returned information is stored in a [MEMORY_BASIC_INFORMATION](https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-memory_basic_information) structure.
+
+### x86 vs x64 Address Space
+
+The amount of virtual address space available depends on the process architecture and operating system configuration.
+
+A 32-bit process has a 4 GB virtual address range in theory, but the user-mode portion is usually smaller depending on whether the process is running on 32-bit Windows, 64-bit Windows, and whether it was linked with large-address awareness. Microsoft documents these limits in [Memory Limits for Windows and Windows Server Releases](https://learn.microsoft.com/en-us/windows/win32/memory/memory-limits-for-windows-releases)
+
+A 64-bit process on 64-bit Windows has a much larger virtual address space. Microsoft describes the 64-bit process virtual address space as being within the 128 TB range in [Virtual Address Spaces](https://learn.microsoft.com/en-us/windows-hardware/drivers/gettingstarted/virtual-address-spaces).
+
+The important point is that pointer size matters. A pointer in a 32-bit process is 4 bytes, while a pointer in a 64-bit process is 8 bytes.
+
 ### Page state
 
 Una pagina en la memoria de windows puede tener distintos estados
@@ -97,7 +121,7 @@ Una pagina en la memoria de windows puede tener distintos estados
 
 Modern Windows systems include several memory protection features that make exploitation harder and help reduce the impact of memory corruption bugs. This section will explore both [Data Execution Prevention](https://learn.microsoft.com/en-us/windows/win32/memory/data-execution-prevention) and [Address Space Layout Randomization](https://techcommunity.microsoft.com/discussions/windows-security/turn-on-mandatory-aslr-in-windows-security/1186989).
 
-### Data Execution Prevention
+### Data Execution Prevention - DEP
 
 [Data Execution Prevention](https://learn.microsoft.com/en-us/windows/win32/memory/data-execution-prevention), commonly known as DEP, is a Windows memory protection feature that prevents code from executing from memory regions that are not explicitly marked as executable. In practice, this means that memory used for normal data, such as the stack, heap, and buffers allocated as `PAGE_READWRITE`, should not be treated as executable code.
 
@@ -105,4 +129,19 @@ DEP relies on page permissions. If a page is committed with a non-executable pro
 
 The reason writable and executable memory should be avoided is that it weakens this separation. If a memory region is both writable and executable, a bug or vulnerability that allows data to be written into that region may also allow that data to be executed as code. For this reason, normal programs should usually keep writable data pages and executable code pages separate. A safer pattern for programs that generate code at runtime is to write the data while the memory is writable, then change the protection with [VirtualProtect](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualprotect) so the region becomes executable but no longer writable.
 
-> Si es largo, pero necesario de entender.
+> Basicamente lo que previene que ejecutes código en memoria jaja lol
+
+### Address Space Layout Randomization - ASLR
+
+[Address Space Layout Randomization](https://learn.microsoft.com/en-us/windows/win32/memory/address-space-layout-randomization), commonly known as ASLR, is another memory protection feature that makes process memory layouts less predictable. Instead of loading executable images, DLLs, stacks, heaps, and other memory regions at the same addresses every time, Windows can randomize where they appear inside a process's virtual address space.
+
+This matters because many exploitation techniques depend on knowing where useful code or data exists in memory. For example, if a DLL always loaded at the same base address, an attacker could hardcode addresses from that DLL and reuse them across runs. ASLR makes this harder because the base address can change between process launches, system boots, or image loads, depending on the type of region and system configuration.
+
+For Portable Executable files, ASLR depends on how the image was built. In Visual Studio, the linker option [/DYNAMICBASE](https://learn.microsoft.com/en-us/cpp/build/reference/dynamicbase-use-address-space-layout-randomization?view=msvc-170) marks the image as compatible with ASLR and is enabled by default.
+
+On 64-bit images, the [/HIGHENTROPYVA](https://learn.microsoft.com/en-us/cpp/build/reference/highentropyva-support-64-bit-aslr?view=msvc-170) linker option, allows Windows to use a larger address range for randomization, increasing the amount of entropy available to ASLR. This option is also enabled by default for 64-bit images, but it only has an effect when `/DYNAMICBASE` is enabled.
+
+ASLR should not be confused with memory protection permissions. ASLR does not decide whether a page is readable, writable, or executable; that is handled by page protections such as `PAGE_READWRITE` and `PAGE_EXECUTE_READ`. ASLR only makes memory addresses harder to predict. This means ASLR does not prevent memory corruption bugs by itself, but it can make reliable exploitation harder by reducing address predictability.
+
+> Basicamente hace aleatoria la dirección de memoria para que se más dificil de obtener el valor.
+

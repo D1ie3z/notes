@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/redteam/Desarrollo de regalos/Windows Architecture.md",
+                "file": "docs/redteam/Desarrollo de regalos/Windows Architecture and Memory management.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Windows Architecture"
+              "title": "Windows Architecture and Memory management"
             }
           }
         ],
@@ -207,11 +207,11 @@
   "active": "68009159eef855d1",
   "lastOpenFiles": [
     "docs/redteam/Desarrollo de regalos/Window Memory Management.md",
+    "docs/redteam/Desarrollo de regalos/Windows Architecture and Memory management.md",
     "docs/redteam/Desarrollo de regalos/Regalote.md",
-    "docs/redteam/Desarrollo de regalos/Windows Architecture.md",
+    "docs/redteam/Desarrollo de regalos/Lenguaje de programación.md",
     "docs/redteam/phishing/requisitos/explicacion/explicacion.md",
     "docs/redteam/Desarrollo de regalos/C.md",
-    "docs/redteam/Desarrollo de regalos/Lenguaje de programación.md",
     "docs/redteam/edr/EDR.md",
     "docs/redteam/Desarrollo de regalos/Tools/Tools.md",
     "docs/redteam/index.md",
