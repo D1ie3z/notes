@@ -27,6 +27,20 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "docs/redteam/Desarrollo de regalos/Portable Executable Formats.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Portable Executable Formats"
+            }
+          },
+          {
+            "id": "121cf1b3f854fd34",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "docs/redteam/Desarrollo de regalos/Windows Architecture and Memory management.md",
                 "mode": "source",
                 "source": true
@@ -206,8 +220,11 @@
   },
   "active": "68009159eef855d1",
   "lastOpenFiles": [
-    "docs/redteam/Desarrollo de regalos/Window Memory Management.md",
+    "Pasted image 20261029142947.png",
+    "Pasted image 20261029142936.png",
     "docs/redteam/Desarrollo de regalos/Windows Architecture and Memory management.md",
+    "docs/redteam/Desarrollo de regalos/Portable Executable Formats.md",
+    "docs/redteam/Desarrollo de regalos/Window Memory Management.md",
     "docs/redteam/Desarrollo de regalos/Regalote.md",
     "docs/redteam/Desarrollo de regalos/Lenguaje de programación.md",
     "docs/redteam/phishing/requisitos/explicacion/explicacion.md",
