@@ -59,3 +59,48 @@ UN SID SE PUEDE CONVERTIR EN UN STRING LEGIBLE
 |`S-1-5-18`|Local System|
 |`S-1-5-32-544`|Built-in Administrators group|
 |`S-1-5-32-545`|Built-in Users group|
+
+>Ve las APIs de windows
+
+> En el contexto de **Windows**, el término "page" suele referirse principalmente al **archivo de página** (`pagefile.sys`), un archivo de sistema oculto que forma parte de la **memoria virtual** del sistema operativo. Su función principal es extender la **RAM física** del ordenador; cuando la memoria disponible se agota, Windows mueve datos de baja frecuencia a este archivo en el disco duro o SSD para liberar espacio en la RAM y mantener el rendimiento de las aplicaciones activas.
+### Page state
+
+Una pagina en la memoria de windows puede tener distintos estados
+
+- Free: A free page is not reserved or committed. It is not accessible to the process. A free address range can later be reserved, committed, or both reserved and committed. Attempting to read from or write to a free page will usually result in an access violation.
+- A reserved page is a range of virtual address space that has been set aside for future use. The address range cannot be used by another allocation request, but it does not yet have committed storage associated with it. Reserved memory is useful when a program wants to reserve a large range of addresses and commit smaller parts of that range later. For example, `VirtualAlloc` can reserve memory using `MEM_RESERVE`.
+- A committed page has memory charges allocated from the system's available commit limit, which is backed by RAM and paging files. A committed page is accessible only if its protection allows the requested operation. Committed does not always mean the page is already resident in physical RAM. The system can bring the page into memory when the process first accesses it. This is one reason virtual memory is more flexible than directly exposing physical RAM to applications. `VirtualAlloc` can commit memory using `MEM_COMMIT`.
+
+### Page Protection Options
+
+- [PAGE_NOACCESS](https://learn.microsoft.com/en-us/windows/win32/memory/memory-protection-constants#:~:text=Windows%20Server%C2%A02008.-,PAGE_NOACCESS,-0x01) - Disables all access to the committed pages. Reading, writing, or executing this region causes an access violation.
+    
+- [PAGE_READONLY](https://learn.microsoft.com/en-us/windows/win32/memory/memory-protection-constants#:~:text=PAGE_READONLY,0x02) - Enables read-only access to the committed region of pages. An attempt to write to the committed region results in an access violation.
+    
+- [PAGE_READWRITE](https://learn.microsoft.com/en-us/windows/win32/memory/memory-protection-constants#:~:text=an%20access%20violation.-,PAGE_READWRITE,-0x04) - Enables both read and write permissions to the commited region of pages.
+    
+- [PAGE_EXECUTE_READ](https://learn.microsoft.com/en-us/windows/win32/memory/memory-protection-constants#:~:text=PAGE_EXECUTE_READ,0x20) - Enables both execution and reading on the commited region of pages.
+    
+- [PAGE_EXECUTE_READWRITE](https://learn.microsoft.com/en-us/windows/win32/memory/memory-protection-constants#:~:text=2003%20with%20SP1.-,PAGE_EXECUTE_READWRITE,-0x40) - Enables Read, Write and Execute. This is highly discouraged from being used and is generally an IoC because it's uncommon for memory to be both writable and executable at the same time.
+    
+- [PAGE_GUARD](https://learn.microsoft.com/en-us/windows/win32/memory/memory-protection-constants#:~:text=Description-,PAGE_GUARD,-0x100) - Creates a guard page, where any attempt to access the guarded region (whether to write, execute, or ever read) will cause the system to raise an `STATUS_GUARD_PAGE_VIOLATION` exception and turn off the guard page status. Guard pages thus act as a one-time access alarm.
+
+### Page Type
+
+1. **Private Memory** - A region reported as [MEM_PRIVATE](https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-memory_basic_information#:~:text=MEM_PRIVATE) contains pages that are private to the process and are not mapped from a file or shared section. Memory allocated using APIs such as `VirtualAlloc` is generally reported as `MEM_PRIVATE`. Process heaps, stacks, and manually allocated buffers commonly use private memory as well.
+    
+2. **Mapped Memory** - A region reported as [MEM_MAPPED](https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-memory_basic_information#:~:text=MEM_MAPPED) contains pages mapped from a section object that is not an executable image. This commonly includes views created using APIs such as [CreateFileMapping](https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createfilemappinga) and [MapViewOfFile](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-mapviewoffile). The section may be backed by a data file or by the system paging file. Multiple processes can map the same section, allowing the underlying memory to be shared between them. The mapping APIs are covered later in details when discussing techniques like _Mapping Injection_.
+    
+3. **Image Memory** - A region reported as [MEM_IMAGE](https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-memory_basic_information#:~:text=MEM_IMAGE) contains pages mapped from a Portable Executable image, such as an `.exe` or `.dll` (more on PE files in the next module). When Windows loads an executable image or DLL into a process, its PE sections are mapped into the process's virtual address space and are generally reported as `MEM_IMAGE`. The protection of each region is derived from the characteristics of its corresponding PE section. For example, the `.text` section is commonly mapped as executable and readable, whereas data sections may be mapped as readable and writable.
+
+## Memory Protection
+
+Modern Windows systems include several memory protection features that make exploitation harder and help reduce the impact of memory corruption bugs. This section will explore both [Data Execution Prevention](https://learn.microsoft.com/en-us/windows/win32/memory/data-execution-prevention) and [Address Space Layout Randomization](https://techcommunity.microsoft.com/discussions/windows-security/turn-on-mandatory-aslr-in-windows-security/1186989).
+
+### Data Execution Prevention
+
+[Data Execution Prevention](https://learn.microsoft.com/en-us/windows/win32/memory/data-execution-prevention), commonly known as DEP, is a Windows memory protection feature that prevents code from executing from memory regions that are not explicitly marked as executable. In practice, this means that memory used for normal data, such as the stack, heap, and buffers allocated as `PAGE_READWRITE`, should not be treated as executable code.
+
+DEP relies on page permissions. If a page is committed with a non-executable protection such as `PAGE_READWRITE` or `PAGE_READONLY`, the process can read or write the page depending on its protection, but it cannot execute instructions from it. If execution is attempted from that page, Windows raises an _access violation_. Executable pages must use one of the executable protection constants, such as `PAGE_EXECUTE`, `PAGE_EXECUTE_READ`, or `PAGE_EXECUTE_READWRITE`.
+
+The reason writable and executable memory should be avoided is that it weakens this separation. If a memory region is both writable and executable, a bug or vulnerability that allows data to be written into that region may also allow that data to be executed as code. For this reason, normal programs should usually keep writable data pages and executable code pages separate. A safer pattern for programs that generate code at runtime is to write the data while the memory is writable, then change the protection with [VirtualProtect](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualprotect) so the region becomes executable but no longer writable.
