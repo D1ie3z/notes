@@ -1,5 +1,5 @@
 ---
-title: Windows Architecture
+title: Windows Architecture and Memory management
 sidebar_position: 1
 ---
 
