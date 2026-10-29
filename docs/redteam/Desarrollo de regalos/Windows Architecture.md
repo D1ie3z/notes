@@ -1,5 +1,5 @@
 ---
-title:Windows Architecture
+title: Windows Architecture
 sidebar_position: 1
 ---
 
