@@ -50,6 +50,9 @@ En Windows, el procesador opera en dos modos distintos para garantizar la estabi
     
 - **Hardware Abstraction Layer and Hardware** - The [Hardware Abstraction Layer](https://en.wikipedia.org/wiki/Hardware_abstraction), or [HAL](https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/windows-kernel-mode-hal-library), provides an abstraction between Windows and the underlying hardware platform. Below the HAL is the physical hardware itself, including the CPU, memory, storage devices, network adapters, display devices, buses, interrupts, and other peripherals.
 
+### SID - (Security Identifier)
+
+Es un identificador de objetos en windows que Windows asigna a cada cuenta de usuario, grupo, ordenador o proceso para gestionar permisos y acceso a recursos mediante listas de control de acceso (ACL).
 
 UN SID SE PUEDE CONVERTIR EN UN STRING LEGIBLE
 
