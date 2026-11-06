@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/redteam/Desarrollo de regalos/Exploiting EDRs For Evasion - Finding Internal Exclusions List.md",
+                "file": "docs/payments/index.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Exploiting EDRs For Evasion - Finding Internal Exclusions List"
+              "title": "index"
             }
           },
           {
@@ -220,11 +220,15 @@
   },
   "active": "68009159eef855d1",
   "lastOpenFiles": [
-    "docs/redteam/Desarrollo de regalos/Windows Architecture and Memory management.md",
-    "docs/redteam/Desarrollo de regalos/Exploiting EDRs For Evasion - Finding Internal Exclusions List.md",
+    "docs/payments/Sistemas de pagos de seguridad.md",
     "docs/payments/index.md",
-    "docs/payments/active-directory/ad-basics.md",
+    "docs/redteam/Desarrollo de regalos/Lenguaje de programación.md",
+    "docs/redteam/Desarrollo de regalos/Undocumented Structures.md",
     "docs/redteam/Desarrollo de regalos/Portable Executable Formats.md",
+    "docs/redteam/Desarrollo de regalos/Tools/Tools.md",
+    "docs/redteam/Desarrollo de regalos/Exploiting EDRs For Evasion - Finding Internal Exclusions List.md",
+    "docs/redteam/Desarrollo de regalos/Windows Architecture and Memory management.md",
+    "docs/payments/active-directory/ad-basics.md",
     "docs/payments/linux/privilege-escalation.md",
     "docs/payments/network/pivoting.md",
     "docs/payments/network/mainframe.md",
@@ -237,11 +241,9 @@
     "Pasted image 20261029142936.png",
     "docs/redteam/Desarrollo de regalos/Window Memory Management.md",
     "docs/redteam/Desarrollo de regalos/Regalote.md",
-    "docs/redteam/Desarrollo de regalos/Lenguaje de programación.md",
     "docs/redteam/phishing/requisitos/explicacion/explicacion.md",
     "docs/redteam/Desarrollo de regalos/C.md",
     "docs/redteam/edr/EDR.md",
-    "docs/redteam/Desarrollo de regalos/Tools/Tools.md",
     "docs/redteam/index.md",
     "docs/redteam/Desarrollo de regalos/Tools",
     "docs/random/intro.md",
@@ -253,9 +255,7 @@
     "docs/bugbounty/recon/Adquisiciones.md",
     "docs/redteam/phishing/requisitos/Hosting.md",
     "docs/redteam/phishing/recursos/recursos.md",
-    "docs/redteam/phishing/detection/explicacion/explicacion.md",
     "Pasted image 20261005130207.png",
-    "docs/redteam/phishing/detection/index.md",
     "docs/redteam/phishing/detection/explicacion"
   ]
 }
