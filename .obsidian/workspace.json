@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "docs/redteam/Desarrollo de regalos/Portable Executable Formats.md",
+                "file": "docs/redteam/Desarrollo de regalos/Exploiting EDRs For Evasion - Finding Internal Exclusions List.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Portable Executable Formats"
+              "title": "Exploiting EDRs For Evasion - Finding Internal Exclusions List"
             }
           },
           {
@@ -220,10 +220,21 @@
   },
   "active": "68009159eef855d1",
   "lastOpenFiles": [
+    "docs/redteam/Desarrollo de regalos/Windows Architecture and Memory management.md",
+    "docs/redteam/Desarrollo de regalos/Exploiting EDRs For Evasion - Finding Internal Exclusions List.md",
+    "docs/payments/index.md",
+    "docs/payments/active-directory/ad-basics.md",
+    "docs/redteam/Desarrollo de regalos/Portable Executable Formats.md",
+    "docs/payments/linux/privilege-escalation.md",
+    "docs/payments/network/pivoting.md",
+    "docs/payments/network/mainframe.md",
+    "docs/payments/linux",
+    "docs/payments/_category_.json",
+    "docs/payments/network",
+    "docs/payments/active-directory",
+    "docs/payments",
     "Pasted image 20261029142947.png",
     "Pasted image 20261029142936.png",
-    "docs/redteam/Desarrollo de regalos/Windows Architecture and Memory management.md",
-    "docs/redteam/Desarrollo de regalos/Portable Executable Formats.md",
     "docs/redteam/Desarrollo de regalos/Window Memory Management.md",
     "docs/redteam/Desarrollo de regalos/Regalote.md",
     "docs/redteam/Desarrollo de regalos/Lenguaje de programación.md",
@@ -245,7 +256,6 @@
     "docs/redteam/phishing/detection/explicacion/explicacion.md",
     "Pasted image 20261005130207.png",
     "docs/redteam/phishing/detection/index.md",
-    "docs/redteam/phishing/detection/explicacion",
-    "README.md"
+    "docs/redteam/phishing/detection/explicacion"
   ]
 }
