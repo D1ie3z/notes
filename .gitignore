@@ -18,3 +18,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Obsidian (cambia constantemente mientras la app está abierta)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
