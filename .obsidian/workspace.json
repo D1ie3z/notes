@@ -222,6 +222,7 @@
   "lastOpenFiles": [
     "docs/payments/Sistemas de pagos de seguridad.md",
     "docs/payments/index.md",
+    "docs/infra/index.md",
     "docs/redteam/Desarrollo de regalos/Lenguaje de programación.md",
     "docs/redteam/Desarrollo de regalos/Undocumented Structures.md",
     "docs/redteam/Desarrollo de regalos/Portable Executable Formats.md",
@@ -254,7 +255,6 @@
     "docs/bugbounty/recon/AD y analiticas.md",
     "docs/bugbounty/recon/Adquisiciones.md",
     "docs/redteam/phishing/requisitos/Hosting.md",
-    "docs/redteam/phishing/recursos/recursos.md",
     "Pasted image 20261005130207.png",
     "docs/redteam/phishing/detection/explicacion"
   ]
