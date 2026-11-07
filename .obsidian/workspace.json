@@ -36,6 +36,18 @@
             }
           },
           {
+            "id": "5e2b549a710fa8b3",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.15.0"
+              },
+              "icon": "lucide-book-up",
+              "title": "Registro de cambios 1.15.0"
+            }
+          },
+          {
             "id": "121cf1b3f854fd34",
             "type": "leaf",
             "state": {
@@ -50,7 +62,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -218,44 +230,46 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "68009159eef855d1",
+  "active": "5e2b549a710fa8b3",
   "lastOpenFiles": [
-    "docs/payments/Sistemas de pagos de seguridad.md",
-    "docs/payments/index.md",
-    "docs/infra/index.md",
-    "docs/redteam/Desarrollo de regalos/Lenguaje de programación.md",
-    "docs/redteam/Desarrollo de regalos/Undocumented Structures.md",
-    "docs/redteam/Desarrollo de regalos/Portable Executable Formats.md",
-    "docs/redteam/Desarrollo de regalos/Tools/Tools.md",
-    "docs/redteam/Desarrollo de regalos/Exploiting EDRs For Evasion - Finding Internal Exclusions List.md",
-    "docs/redteam/Desarrollo de regalos/Windows Architecture and Memory management.md",
-    "docs/payments/active-directory/ad-basics.md",
-    "docs/payments/linux/privilege-escalation.md",
-    "docs/payments/network/pivoting.md",
-    "docs/payments/network/mainframe.md",
-    "docs/payments/linux",
-    "docs/payments/_category_.json",
-    "docs/payments/network",
-    "docs/payments/active-directory",
-    "docs/payments",
+    "node_modules/url-loader/node_modules/ajv-keywords/keywords/dot/_formatLimit.jst",
+    "node_modules/url-loader/node_modules/ajv-keywords/keywords/dot/switch.jst",
+    "node_modules/url-loader/node_modules/ajv-keywords/keywords/dot/patternRequired.jst",
+    "node_modules/url-loader/node_modules/ajv-keywords/keywords/dot",
+    "node_modules/cheerio/lib/index.js",
+    "node_modules/bytestreamjs/build/cjs/seq_bit_stream.js",
+    "node_modules/url-loader/node_modules/schema-utils/dist/keywords/undefinedAsNull.js",
+    "node_modules/url-loader/node_modules/schema-utils/dist/keywords/absolutePath.js",
+    "node_modules/url-loader/node_modules/schema-utils/dist/keywords",
+    "node_modules/url-loader/node_modules/schema-utils/dist/index.js",
+    "node_modules/url-loader/node_modules/schema-utils/dist/util",
+    "node_modules/fast-json-stable-stringify/README.md",
+    "node_modules/html-webpack-plugin/node_modules/commander/Readme.md",
+    "node_modules/html-minifier-terser/node_modules/commander/Readme.md",
+    "node_modules/merge-descriptors/README.md",
+    "node_modules/merge-descriptors/HISTORY.md",
+    "node_modules/media-typer/README.md",
+    "node_modules/media-typer/HISTORY.md",
+    "node_modules/methods/README.md",
+    "node_modules/methods/HISTORY.md",
+    "node_modules/picocolors/README.md",
+    "node_modules/string_decoder/README.md",
+    "node_modules/strip-ansi/readme.md",
+    "node_modules/to-regex-range/README.md",
+    "node_modules/toidentifier/README.md",
+    "node_modules/toidentifier/HISTORY.md",
+    "node_modules/undici-types/README.md",
+    "node_modules/unpipe/README.md",
+    "node_modules/unpipe/HISTORY.md",
+    "node_modules/util-deprecate/README.md",
+    "node_modules/util-deprecate/History.md",
+    "node_modules/utils-merge/README.md",
+    "node_modules/which/CHANGELOG.md",
+    "node_modules/yallist/README.md",
+    "node_modules/yocto-queue/readme.md",
+    "node_modules/clean-css/node_modules/source-map/README.md",
     "Pasted image 20261029142947.png",
     "Pasted image 20261029142936.png",
-    "docs/redteam/Desarrollo de regalos/Window Memory Management.md",
-    "docs/redteam/Desarrollo de regalos/Regalote.md",
-    "docs/redteam/phishing/requisitos/explicacion/explicacion.md",
-    "docs/redteam/Desarrollo de regalos/C.md",
-    "docs/redteam/edr/EDR.md",
-    "docs/redteam/index.md",
-    "docs/redteam/Desarrollo de regalos/Tools",
-    "docs/random/intro.md",
-    "docs/redteam/Desarrollo de regalos",
-    "docs/redteam/c2/C2.md",
-    "docs/bugbounty/recon/Favicon.md",
-    "docs/bugbounty/recon/DNS.md",
-    "docs/bugbounty/recon/AD y analiticas.md",
-    "docs/bugbounty/recon/Adquisiciones.md",
-    "docs/redteam/phishing/requisitos/Hosting.md",
-    "Pasted image 20261005130207.png",
-    "docs/redteam/phishing/detection/explicacion"
+    "Pasted image 20261005130207.png"
   ]
 }
