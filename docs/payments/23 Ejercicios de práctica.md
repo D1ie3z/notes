@@ -415,4 +415,4 @@ Cuando ya domines los ejercicios, esto es lo que se revisa en un trabajo real (t
 9. **Reversas**: ¿el switch detecta duplicados tras reinicio? (nota 19).
 10. **IAD/CVR**: ¿alguien lee el campo que la tarjeta escribió? (notas 10, 15, 20 — el campo que nadie lee).
 
-> Regla final: cada ejercicio es legal porque usa lo tuyo. En una auditoría, el permiso escrito es lo que separa la investigación del delito — y ninguna técnica de estas notas vale un expediente penal.
+> Regla final: cada ejercicio es legal porque usa lo tuyo. En una auditoría, el permiso escrito es lo que separa la investigación del delito — y ninguna técnica de estas notas vale un expediente penal. (no seas wey)
