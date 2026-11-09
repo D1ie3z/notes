@@ -1,6 +1,6 @@
 ---
 title: Undocumented Structures
-sidebar_position: 1
+sidebar_position: 5
 ---
 
 ## Windows SDK, WDK, and Microsoft Learn

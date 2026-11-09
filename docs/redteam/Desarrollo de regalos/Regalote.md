@@ -1,6 +1,6 @@
 ---
 title: Regalote
-sidebar_position: 1
+sidebar_position: 7
 ---
 
 ## ¿Qué es esta basura?

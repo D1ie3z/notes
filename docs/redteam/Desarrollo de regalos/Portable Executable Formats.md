@@ -1,6 +1,6 @@
 ---
 title: Portable Executable Formats
-sidebar_position: 1
+sidebar_position: 3
 ---
 
 ## Qué es?

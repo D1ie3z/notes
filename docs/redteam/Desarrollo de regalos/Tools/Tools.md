@@ -1,6 +1,6 @@
 ---
 title: "Tooling Philosophy — Kit de Herramientas del Lab"
-sidebar_position: 3
+sidebar_position: 8
 ---
 
 # Tooling Philosophy
